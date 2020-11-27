@@ -1,6 +1,4 @@
-
-
-# <font color=#69D600>Typora Install </font>
+# <font color=#69D600>Typora Install</font>
 
 [TOC]
 
@@ -8,6 +6,7 @@
 
 #### Version: typora-setup-x64
 平台：Windows
+
 文件：typora-setup-x64.exe
 
 
@@ -29,6 +28,8 @@
 Finish
 
 ![Typora](../images/Typora/Typora004.png "Finish") 
+
+
 
 ### 检测
 

@@ -1,4 +1,4 @@
-# <font color=#69D600>K Install </font>
+# <font color=#69D600>K Install</font>
 
 [TOC]
 
@@ -7,6 +7,7 @@
 #### Version: jdk-15
 
 平台：Windows
+
 文件：jdk-15.exe
 
 
