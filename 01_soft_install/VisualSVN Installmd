@@ -1,0 +1,100 @@
+# <font color=#69D600>VisualSVN Install</font>
+
+[TOC]
+
+官网下载：https://www.visualsvn.com/visualsvn/download/
+
+#### Version: VisualSVN-Server-3.6.0-x64
+
+平台：Windows
+
+文件：VisualSVN-Server-3.6.0-x64.msi，TortoiseSVN-1.9.5.27581-x64-svn-1.9.5.msi
+
+
+
+### 开始安装
+
+先安装 VisualSVN Server，再安装 TortoiseSVN
+
+Next
+
+​    ![SVN](../images/SVN/SVN001.png "Welcome") 
+
+
+
+#### End-User Licence Agreement:
+
+Next
+
+​    ![SVN](../images/SVN/SVN002.png "End-User Licence Agreement") 
+
+
+
+#### Select Components:
+
+默认，都要，Next
+
+​    ![SVN](../images/SVN/SVN003.png "Select Components")
+
+
+
+#### VisualSVN Server Editions:
+
+Standard Edition 进入配置
+
+​    ![SVN](../images/SVN/SVN004.png "VisualSVN Server Editions")
+
+#### Initial Server Configuration:
+
+配置好路径，Next
+
+​    ![SVN](../images/SVN/SVN005.png "Initial Server Configuration")
+
+Install
+
+​    ![SVN](../images/SVN/SVN006.png "Install") 
+
+Finish，继续安装 TortoiseSVN
+
+​    ![SVN](../images/SVN/SVN007.png "TortoiseSVN")
+
+#### 安装 TortoiseSVN
+
+Next
+
+​    ![SVN](../images/SVN/SVN008.png "TortoiseSVN")
+
+配置安装路径其他默认，或根据需要增删，Next
+
+​    ![SVN](../images/SVN/SVN009.png "TortoiseSVN")
+
+Install
+
+​    ![SVN](../images/SVN/SVN010.png "TortoiseSVN")
+
+Finish
+
+汉化，不需要
+
+​    ![SVN](../images/SVN/SVN011.png "TortoiseSVN") 
+
+
+
+#### 检测
+
+右键菜单齐全
+
+​    ![SVN](../images/SVN/SVN012.png "TortoiseSVN")
+
+
+
+### 相关问题追查解决备注
+
+暂无
+
+
+
+### DONE
+
+
+
