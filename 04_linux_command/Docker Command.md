@@ -37,6 +37,10 @@ docker images
 # 显示已有容器信息
 docker ps
 docker container ls
+docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"
+docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Command}}\t{{.RunningFor}}\t{{.Status}}"
+docker ps -a --no-trunc --format "table {{.Names}}\t{{.Command}}\t{{.Ports}}"
+docker ps -a --no-trunc --format "table {{.Names}}\t{{.Mounts}}"
 
 # 删除容器 
 docker rm 容器ID
@@ -53,6 +57,27 @@ mysql -u username -p password
 CREATE DATABASE `eladmin` CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
 use eladmin;
 source /etc/mysql/eladmin.sql
+```
+
+```perl
+-format="TEMPLATE"
+Pretty-print containers using a Go template.
+Valid placeholders:
+.ID - Container ID
+.Image - Image ID
+.Command - Quoted command
+.CreatedAt - Time when the container was created.
+.RunningFor - Elapsed time since the container was started.
+.Ports - Exposed ports.
+.Status - Container status.
+.Size - Container disk size.
+.Names - Container names.
+.Labels - All labels assigned to the container.
+.Label - Value of a specific label for this container. For example {{.Label "com.docker.swarm.cpu"}}
+.Mounts - Names of the volumes mounted in this container.
+
+docker ps -a --no-trunc --format "table {{.Names}}\t{{.Mounts}}"
+
 ```
 
 
