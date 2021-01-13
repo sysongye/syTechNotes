@@ -23,7 +23,7 @@
 
 选择安装目录，Next
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm002.png "Choose Install Location") 
+![WebStorm](../images/WebStorm/WebStorm002.png "Choose Install Location") 
 
 
 
@@ -31,7 +31,7 @@
 
 安装选项，64位，关联文件选一下吧
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm003.png "Installation Options") 
+![WebStorm](../images/WebStorm/WebStorm003.png "Installation Options") 
 
 
 
@@ -39,11 +39,11 @@
 
 创建开始菜单文件夹，默认，开始安装等进度完成
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm004.png "Choose Start Menu Folder") 
+![WebStorm](../images/WebStorm/WebStorm004.png "Choose Start Menu Folder") 
 
 完成运行
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm005.png "完成运行") 
+![WebStorm](../images/WebStorm/WebStorm005.png "完成运行") 
 
 
 
@@ -53,7 +53,7 @@
 
 还没有配置文件
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm006.png "JETBRAINS USER AGREEMENT") 
+![WebStorm](../images/WebStorm/WebStorm006.png "JETBRAINS USER AGREEMENT") 
 
 
 
@@ -61,7 +61,7 @@
 
 先点试用进入程序
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm007.png "DATA SHARING") 
+![WebStorm](../images/WebStorm/WebStorm007.png "DATA SHARING") 
 
 
 
@@ -69,7 +69,7 @@
 
 UI 主题，风格看自己喜欢
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm008.png "Set UI theme") 
+![WebStorm](../images/WebStorm/WebStorm008.png "Set UI theme") 
 
 
 
@@ -77,7 +77,7 @@ UI 主题，风格看自己喜欢
 
 默认插件，可以自定义需要部分或禁用，默认 Next
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm009.png "Default Plugins") 
+![WebStorm](../images/WebStorm/WebStorm009.png "Default Plugins") 
 
 
 
@@ -85,11 +85,11 @@ UI 主题，风格看自己喜欢
 
 打开后新建项目进入可编辑界面，将 **jetbrains-agent.jar** 拖入到程序中，弹框 **Restart**
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm011.png "破解") 
+![WebStorm](../images/WebStorm/WebStorm011.png "破解") 
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm012.png "破解") 
+![WebStorm](../images/WebStorm/WebStorm012.png "破解") 
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm010.png "破解")  
+![WebStorm](../images/WebStorm/WebStorm010.png "破解")  
 
 
 
@@ -101,7 +101,7 @@ UI 主题，风格看自己喜欢
 
 ### 检测
 
-![IDEA](G:/Study/word/Typora/syTechNotes/images/WebStorm/WebStorm013.png "激活成功") 
+![WebStorm](../images/WebStorm/WebStorm013.png "激活成功") 
 
 
 
