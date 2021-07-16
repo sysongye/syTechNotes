@@ -18,7 +18,7 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 默认选项，安装新数据库，Next
 
-![0](../images/Oracle/Oracle001.png "Configuration Options") 
+![0](./images/Oracle/Oracle001.png "Configuration Options") 
 
 
 
@@ -26,7 +26,7 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 个人使用桌面类，Next
 
-![0](../images/Oracle/Oracle002.png "Select System Class") 
+![0](./images/Oracle/Oracle002.png "Select System Class") 
 
 
 
@@ -34,7 +34,7 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 创建新用户，Next
 
-![0](../images/Oracle/Oracle003.png "Specify Oracle Home User") 
+![0](./images/Oracle/Oracle003.png "Specify Oracle Home User") 
 
 
 
@@ -42,7 +42,7 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 典型安装，配置安装路径，企业版，Unicode编码，默认账密，Next，密码不符合建议不用管，直接 Continue
 
-![0](../images/Oracle/Oracle004.png "Typical Install Configuration") 
+![0](./images/Oracle/Oracle004.png "Typical Install Configuration") 
 
 
 
@@ -50,7 +50,7 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 先决条件会自动检查，通过会自动 Next
 
-![0](../images/Oracle/Oracle005.png "Perform Prerequisite Checks") 
+![0](./images/Oracle/Oracle005.png "Perform Prerequisite Checks") 
 
 
 
@@ -58,7 +58,7 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 概要没问题开始 Install
 
-![0](../images/Oracle/Oracle006.png "Summary") 
+![0](./images/Oracle/Oracle006.png "Summary") 
 
 
 
@@ -66,28 +66,28 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 安装过程添加用户进组失败不用管，Continue 
 
-![0](../images/Oracle/Oracle007.png "Install Product") 
+![0](./images/Oracle/Oracle007.png "Install Product") 
 
 Close
 
-![0](../images/Oracle/Oracle008.png "Close") 
+![0](./images/Oracle/Oracle008.png "Close") 
 
 
 
 ### 检测
 https://localhost:5500/em/login 登录弹窗，不需要填容器名
 
-![0](../images/Oracle/Oracle009.png "Oracle009")
+![0](./images/Oracle/Oracle009.png "Oracle009")
 
 数据库状态
 
-![0](../images/Oracle/Oracle010.png "Oracle010") 
+![0](./images/Oracle/Oracle010.png "Oracle010") 
 
 **SQL Plus:**
 
-![0](../images/Oracle/Oracle011.png "SQL Plus") 
+![0](./images/Oracle/Oracle011.png "SQL Plus") 
 
-![0](../images/Oracle/Oracle012.png "Configuration") 
+![0](./images/Oracle/Oracle012.png "Configuration") 
 
 
 

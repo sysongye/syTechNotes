@@ -4,7 +4,7 @@
 
 官网安装教程：https://docs.docker.com/engine/install/centos/
 
-#### Version: latest
+#### Version: docker-ce latest
 
 平台：CentOS8
 
@@ -17,6 +17,8 @@
 > 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低
 >
 > 相关笔记：[Docker Command](../04_linux_command/Docker Command.md)
+
+> docker-ce	Docker 社区版
 
 
 
@@ -64,7 +66,7 @@ $ sudo yum-config-manager \
 
 Failed to set locale, defaulting to C.UTF-8
 
-系统安装时语音时选的 English，/usr/lib/locale 也是 en_US，locale 查看却是 zh_CN.UTF-8，可能是因为时区 **Time & Date** 选了 Shanghai
+系统安装时语言选的 English，/usr/lib/locale 也是 en_US，locale 命令查看却是 zh_CN.UTF-8，可能是因为时区 **Time & Date** 选了 Shanghai
 
 ```
 # locale
@@ -87,7 +89,7 @@ LC_IDENTIFICATION="zh_CN.UTF-8"
 LC_ALL=            
 ```
 
-解决方案：
+临时解决方案：
 
 export LC_ALL=en_US.UTF-8
 
@@ -113,16 +115,40 @@ LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
 ```
 
+优选解决方案：
+
+```
+// 查看 locale.conf 文件
+# cat /etc/locale.conf
+// en_US 则正常，zh_CN 需要修改为 en_US
+LANG="en_US.UTF-8"
+
+// 加载配置文件即生效，仅当前登录有效，重启变无效。亦可用 . /etc/locale.conf 命令
+# source /etc/locale.conf
+
+// root 用户在 /etc/profile.d/ 添加 locale.sh，系统启动会自动加载
+# cat > /etc/profile.d/locale.sh
+. /etc/locale.conf
+```
+
+
+
 可选项：启用夜间或测试存储库，默认禁用，通过 --enable、--disable 切换
 
- ```
+ ```perl
 sudo yum-config-manager --enable docker-ce-nightly
 sudo yum-config-manager --enable docker-ce-test
+# 禁用
+sudo yum-config-manager --disable docker-ce-nightly
  ```
 
 
 
 #### Install Docker Engine:
+
+1、Install the *latest version* of Docker Engine and containerd, or go to the next step to install a specific version:
+
+安装最新版 Docker 引擎和容器，或下一步安装指定版本。
 
 ```
 sudo yum install docker-ce docker-ce-cli containerd.io
@@ -138,6 +164,8 @@ Error:
 
 CentOS8 默认集成了 Podman、Buildah，类似 Docker 的虚拟技术，与 Docker 冲突，暂时先删了冲突的 podman、runc
 
+不一定有冲突，有冲突再删
+
 ```
 sudo yum remove podman
 sudo yum remove runc
@@ -145,7 +173,11 @@ sudo yum remove runc
 
 继续安装成功
 
-也可以查看现有版本，安装指定版本 Docker
+
+
+2、To install a *specific version* of Docker Engine, list the available versions in the repo, then select and install:
+
+查看现有版本，安装指定版本 Docker
 
 ```
 sudo yum list docker-ce --showduplicates | sort -r
@@ -159,7 +191,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-默认仓库太慢https://hub.docker.com/，修改为阿里云镜像库
+默认仓库太慢 https://hub.docker.com/，修改为阿里云镜像库
 
 ```
 cd /etc/docker
@@ -243,6 +275,16 @@ This message shows that your installation appears to be working correctly.
 
 ### 相关问题追查解决备注
 CentOS8 默认集成 Podman、Buildah，考虑是否使用 Podman 替换 Docker
+
+
+
+> Ubuntu install docker
+>
+> \# apt  install docker.io  # version 20.10.2-0ubuntu1~20.04.2
+>
+> apt install -y docker.io
+
+
 
 
 

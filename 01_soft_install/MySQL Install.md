@@ -38,7 +38,7 @@ MySQL社区：https://dev.mysql.com/downloads/mysql/
 
 社区可以跳过登录直接下载，这里没有用新下载的8.0
 
-![MySQL](../images/MySQL/MySQL001.png "MySQL Community Downloads") 
+![MySQL](./images/MySQL/MySQL001.png "MySQL Community Downloads") 
 
 
 
@@ -54,7 +54,7 @@ I accept the license terms. Next
 
 不想麻烦就 Developer Default，再配置mysql密码，完成
 
-![MySQL](../images/MySQL/MySQL002.png "Choosing a Setup Type") 
+![MySQL](./images/MySQL/MySQL002.png "Choosing a Setup Type") 
 
 
 
@@ -62,7 +62,7 @@ I accept the license terms. Next
 
 把需要的产品从左框添加到右框，Server自然是必须的，工作台、通知、文档和其他支持连接器按需添加，样例这里就免了
 
-![MySQL](../images/MySQL/MySQL003.png "Select Products and features") 
+![MySQL](./images/MySQL/MySQL003.png "Select Products and features") 
 
 
 
@@ -70,13 +70,13 @@ I accept the license terms. Next
 
 呃提示安装MySQL For Excel缺少这个工具，执行吧，后台会自行下载需要的工具，时间稍微有点长，或者不需要这个返回移出右框
 
-![MySQL](../images/MySQL/MySQL004.png "Check Requirements") 
+![MySQL](./images/MySQL/MySQL004.png "Check Requirements") 
 
 点安装直到**Finish**，然后就可以**Next**了
 
-![MySQL](../images/MySQL/MySQL005.png "Choosing a Setup Type") 
+![MySQL](./images/MySQL/MySQL005.png "Choosing a Setup Type") 
 
-![MySQL](../images/MySQL/MySQL006.png "Check Requirements") 
+![MySQL](./images/MySQL/MySQL006.png "Check Requirements") 
 
 
 
@@ -84,7 +84,7 @@ I accept the license terms. Next
 
 呃不能自定义安装目录，执行吧，全勾后Next
 
-![MySQL](../images/MySQL/MySQL007.png "Installation") 
+![MySQL](./images/MySQL/MySQL007.png "Installation") 
 
 
 
@@ -92,7 +92,7 @@ I accept the license terms. Next
 
 Next
 
-![MySQL](../images/MySQL/MySQL008.png "Product Configuration") 
+![MySQL](./images/MySQL/MySQL008.png "Product Configuration") 
 
 **Type and Networking:**
 
@@ -116,7 +116,7 @@ Next
 
 ​	Next
 
-![MySQL](../images/MySQL/MySQL009.png "Type and Networking") 
+![MySQL](./images/MySQL/MySQL009.png "Type and Networking") 
 
 
 
@@ -128,9 +128,9 @@ Next
 
 这里添加主密码，随便添加了个 DB Admin 用户，Next
 
-![MySQL](../images/MySQL/MySQL010.png "Accounts and Roles") 
+![MySQL](./images/MySQL/MySQL010.png "Accounts and Roles") 
 
-![MySQL](../images/MySQL/MySQL011.png "Accounts and Roles") 
+![MySQL](./images/MySQL/MySQL011.png "Accounts and Roles") 
 
 
 
@@ -138,7 +138,7 @@ Next
 
 服务默认设置即可，Next
 
-![MySQL](../images/MySQL/MySQL012.png "Windows Service") 
+![MySQL](./images/MySQL/MySQL012.png "Windows Service") 
 
 **Advanced Options:**
 
@@ -154,7 +154,7 @@ Next
 
 这里保持默认配置即可，Next
 
-![MySQL](../images/MySQL/MySQL013.png "Windows Service") 
+![MySQL](./images/MySQL/MySQL013.png "Windows Service") 
 
 
 
@@ -162,15 +162,15 @@ Next
 
 执行最终配置，执行完Finish
 
-![MySQL](../images/MySQL/MySQL014.png "Apply Server Congfiguration") 
+![MySQL](./images/MySQL/MySQL014.png "Apply Server Congfiguration") 
 
 Next
 
- ![MySQL](../images/MySQL/MySQL015.png "Product Congfiguration")
+ ![MySQL](./images/MySQL/MySQL015.png "Product Congfiguration")
 
 安装了工作台可以完成后启动，Finish
 
- ![MySQL](../images/MySQL/MySQL016.png "Installation Complete")
+ ![MySQL](./images/MySQL/MySQL016.png "Installation Complete")
 
 
 
@@ -188,7 +188,7 @@ C:\Program Files\MySQL\MySQL Server 5.6
 ;%MYSQL_HOME%\bin
 ```
 
- ![MySQL](../images/MySQL/MySQL017.png "Environment")
+ ![MySQL](./images/MySQL/MySQL017.png "Environment")
 
 
 
@@ -197,25 +197,25 @@ C:\Program Files\MySQL\MySQL Server 5.6
 
 版本：mysql -V
 
-![MySQL](../images/MySQL/MySQL018.png "mysql -V") 
+![MySQL](./images/MySQL/MySQL018.png "mysql -V") 
 
 登录：mysql -h localhost -u root -p
 
-![MySQL](../images/MySQL/MySQL019.png "mysql") 
+![MySQL](./images/MySQL/MySQL019.png "mysql") 
 
 查看库
 
-![MySQL](../images/MySQL/MySQL020.png "show databases") 
+![MySQL](./images/MySQL/MySQL020.png "show databases") 
 
 
 
 **登录工作台**
 
-![MySQL](../images/MySQL/MySQL021.png "MySQL Workbench")
+![MySQL](./images/MySQL/MySQL021.png "MySQL Workbench")
 
 服务器状态
 
-![MySQL](../images/MySQL/MySQL022.png "MySQL Workbench")
+![MySQL](./images/MySQL/MySQL022.png "MySQL Workbench")
 
 
 

@@ -16,143 +16,31 @@
 
 > note: 官网没有具体文件下载，需要在 download 页面找到 isos 文件夹，从 mirror 链接下载 iso 文件，其实就是阿里云网易搜狐之类的镜像库，可以直接到镜像库找，大部分开源软件都可以在镜像库下载
 
-![CentOS](../images/CentOS/CentOS001.png "mirror") 
+![CentOS](./images/CentOS/CentOS001.png "mirror") 
 
 
 
 ### 开始安装
 
-先在 VMware 创建新虚拟机，模拟一台新电脑，再给电脑安装 Linux 系统
+> Note:
+>
+> 安装到虚拟机则先创建新虚拟机，通过虚拟机加载镜像安装系统
+>
+> 安装到硬盘则可以先从本地磁盘分配好空间备用，镜像可以用 U 盘制作启动盘，或刻录到光盘
 
-创建新虚拟机
+创建新虚拟机 详见 [VM Virtual Machine.md](./VM Virtual Machine.md)
 
-自定义，不要问为什么，纯**，Next
 
-![CentOS](../images/CentOS/CentOS002.png "创建新虚拟机") 
 
-
-
-#### Choose the Virtual Machine Hardware Compatibility:
-
-硬件兼容，Workstation 16.x ，右边版本支持上限，Next
-
-![CentOS](../images/CentOS/CentOS003.png "硬件兼容") 
-
-
-
-#### Guest Operating System Installation:
-
-稍后再安装系统，Next
-
-![CentOS](../images/CentOS/CentOS004.png "Guest Operating System Installation") 
-
-
-
-#### Select  a Guest Operating System:
-
-Linux，CentOS 8 产品，Next
-
-![CentOS](../images/CentOS/CentOS005.png "Select  a Guest Operating System") 
-
-
-
-#### Name the Virtual Machine:
-
-虚拟机命名，选择安装路径，Next
-
-![CentOS](../images/CentOS/CentOS006.png "Name the Virtual Machine") 
-
-
-
-#### Processor Configuration:
-
-1 CPU，2内核，Next
-
-![CentOS](../images/CentOS/CentOS007.png "Processor Configuration") 
-
-
-
-#### Memory for the Virtual Machine:
-
-2G 内存，Next
-
-![CentOS](../images/CentOS/CentOS008.png "Memory for the Virtual Machine") 
-
-
-
-#### Network Type:
-
-默认，Next
-
-![CentOS](../images/CentOS/CentOS009.png "Network Type") 
-
-
-
-#### Select I/O Controller Types:
-
-默认，Next
-
-![CentOS](../images/CentOS/CentOS010.png "Select I/O Controller Types") 
-
-
-
-#### Select a Disk Type:
-
-默认，Next
-
-![CentOS](../images/CentOS/CentOS011.png "Select a Disk Type") 
-
-
-
-#### Select a Disk:
-
-创建新虚拟硬盘，非虚拟机应该可以考虑使用物理硬盘，Next
-
-![CentOS](../images/CentOS/CentOS012.png "Select a Disk") 
-
-
-
-#### Specify Disk Capacity:
-
-容量 50G，多文件形式，Next
-
-![CentOS](../images/CentOS/CentOS013.png "Specify Disk Capacity") 
-
-
-
-#### Specify Disk File:
-
-指定路径，Next
-
-![CentOS](../images/CentOS/CentOS014.png "Specify Disk File") 
-
-
-
-#### Ready to Create Virtual Machine:
-
-![CentOS](../images/CentOS/CentOS015.png "Ready to Create Virtual Machine") 
-
-安装完可以看到虚拟机信息，进入配置
-
-![CentOS](../images/CentOS/CentOS016.png "进入配置") 
-
-通过 CD 找到 ISO 镜像文件
-
-![CentOS](../images/CentOS/CentOS017.png "通过 CD 找到 ISO 镜像文件") 
-
-启动虚拟机开始安装 Linux 系统
-
-![CentOS](../images/CentOS/CentOS018.png "启动虚拟机") 
-
-
+### 安装系统
 
 #### Install CentOS Linux 8:
 
-![CentOS](../images/CentOS/CentOS019.png "Install CentOS Linux 8") 
+![CentOS](./images/CentOS/CentOS019.png "Install CentOS Linux 8") 
 
 选择安装，Enter，选择键盘和语言，Continue
 
-![CentOS](../images/CentOS/CentOS020.png "选择键盘和语言") 
+![CentOS](./images/CentOS/CentOS020.png "选择键盘和语言") 
 
 
 
@@ -160,9 +48,9 @@ Linux，CentOS 8 产品，Next
 
 时区和日期时间配置
 
-![CentOS](../images/CentOS/CentOS021.png "时区和日期时间") 
+![CentOS](./images/CentOS/CentOS021.png "时区和日期时间") 
 
-![CentOS](../images/CentOS/CentOS022.png "时区和日期时间") 
+![CentOS](./images/CentOS/CentOS022.png "时区和日期时间") 
 
 
 
@@ -170,7 +58,7 @@ Linux，CentOS 8 产品，Next
 
 带图形界面，需要的几个程序
 
-![CentOS](../images/CentOS/CentOS023.png "Software Selection") 
+![CentOS](./images/CentOS/CentOS023.png "Software Selection") 
 
 
 
@@ -178,7 +66,7 @@ Linux，CentOS 8 产品，Next
 
 连接网络，主机名称命名
 
-![CentOS](../images/CentOS/CentOS024.png "Network & Host Name") 
+![CentOS](./images/CentOS/CentOS024.png "Network & Host Name") 
 
 
 
@@ -186,21 +74,21 @@ Linux，CentOS 8 产品，Next
 
 安装位置，虚拟硬盘自定义分区
 
-![CentOS](../images/CentOS/CentOS025.png "Installation Destination") 
+![CentOS](./images/CentOS/CentOS025.png "Installation Destination") 
 
-![CentOS](../images/CentOS/CentOS026.png "Installation Destination") 
+![CentOS](./images/CentOS/CentOS026.png "Installation Destination") 
 
 分区配置
 
-![CentOS](../images/CentOS/CentOS027.png "分区配置") 
+![CentOS](./images/CentOS/CentOS027.png "分区配置") 
 
 添加挂载点
 
-![CentOS](../images/CentOS/CentOS028.png "添加挂载点") 
+![CentOS](./images/CentOS/CentOS028.png "添加挂载点") 
 
 先把分区加上，容量随便，稍后再更改
 
-![CentOS](../images/CentOS/CentOS029.png "分区") 
+![CentOS](./images/CentOS/CentOS029.png "分区") 
 
 从配置上看主要有 DATA 和 SYSTEM 两个区域，先按以下方案进行了配置
 
@@ -223,61 +111,61 @@ swap	2G		xfs
 
 配置完成，Accept Changes
 
-![CentOS](../images/CentOS/CentOS030.png "Accept Changes") 
+![CentOS](./images/CentOS/CentOS030.png "Accept Changes") 
 
 开始安装
 
-![CentOS](../images/CentOS/CentOS031.png "开始安装") 
+![CentOS](./images/CentOS/CentOS031.png "开始安装") 
 
 安装过程同时把密码设好，反正迟早要设置
 
-![CentOS](../images/CentOS/CentOS032.png "设密码") 
+![CentOS](./images/CentOS/CentOS032.png "设密码") 
 
 同时添加新用户用来登录系统
 
-![CentOS](../images/CentOS/CentOS033.png "添加新用户") 
+![CentOS](./images/CentOS/CentOS033.png "添加新用户") 
 
-![CentOS](../images/CentOS/CentOS034.png "添加新用户") 
+![CentOS](./images/CentOS/CentOS034.png "添加新用户") 
 
 完成重启
 
-![CentOS](../images/CentOS/CentOS035.png "完成重启") 
+![CentOS](./images/CentOS/CentOS035.png "完成重启") 
 
 许可配置
 
-![CentOS](../images/CentOS/CentOS036.png "许可配置") 
+![CentOS](./images/CentOS/CentOS036.png "许可配置") 
 
 同意许可
 
-![CentOS](../images/CentOS/CentOS037.png "同意许可") 
+![CentOS](./images/CentOS/CentOS037.png "同意许可") 
 
 完成配置
 
-![CentOS](../images/CentOS/CentOS038.png "完成配置") 
+![CentOS](./images/CentOS/CentOS038.png "完成配置") 
 
 进入系统
 
-![CentOS](../images/CentOS/CentOS039.png "进入系统") 
+![CentOS](./images/CentOS/CentOS039.png "进入系统") 
 
 Next
 
-![CentOS](../images/CentOS/CentOS040.png "Next") 
+![CentOS](./images/CentOS/CentOS040.png "Next") 
 
 Next
 
-![CentOS](../images/CentOS/CentOS041.png "Next") 
+![CentOS](./images/CentOS/CentOS041.png "Next") 
 
 隐私先开启，Next
 
-![CentOS](../images/CentOS/CentOS042.png "Next") 
+![CentOS](./images/CentOS/CentOS042.png "Next") 
 
 帐户没有，Skip
 
-![CentOS](../images/CentOS/CentOS043.png "Skip") 
+![CentOS](./images/CentOS/CentOS043.png "Skip") 
 
 完成
 
-![CentOS](../images/CentOS/CentOS044.png "完成") 
+![CentOS](./images/CentOS/CentOS044.png "完成") 
 
 
 
@@ -285,7 +173,7 @@ Next
 
 打开终端，df -h
 
-![CentOS](../images/CentOS/CentOS045.png "df -h") 
+![CentOS](./images/CentOS/CentOS045.png "df -h") 
 
 ```
 $ df -h
@@ -338,7 +226,72 @@ var					/
 
 
 ### 相关问题追查解决备注
-暂无
+系统安装时语言选的 English，/usr/lib/locale 也是 en_US，locale 命令查看却是 zh_CN.UTF-8，可能是因为时区 **Time & Date** 选了 Shanghai
+
+```
+# locale
+locale: Cannot set LC_CTYPE to default locale: No such file or directory
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+locale: Cannot set LC_ALL to default locale: No such file or directory
+LANG=zh_CN.UTF-8
+LC_CTYPE="zh_CN.UTF-8"
+LC_NUMERIC="zh_CN.UTF-8"
+LC_TIME="zh_CN.UTF-8"
+LC_COLLATE="zh_CN.UTF-8"
+LC_MONETARY="zh_CN.UTF-8"
+LC_MESSAGES="zh_CN.UTF-8"
+LC_PAPER="zh_CN.UTF-8"
+LC_NAME="zh_CN.UTF-8"
+LC_ADDRESS="zh_CN.UTF-8"
+LC_TELEPHONE="zh_CN.UTF-8"
+LC_MEASUREMENT="zh_CN.UTF-8"
+LC_IDENTIFICATION="zh_CN.UTF-8"
+LC_ALL=            
+```
+
+临时解决方案：
+
+export LC_ALL=en_US.UTF-8
+
+export LANG=en_US.UTF-8
+
+```
+# export LC_ALL=en_US.UTF-8
+# locale
+LANG=zh_CN.UTF-8
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER="en_US.UTF-8"
+LC_NAME="en_US.UTF-8"
+LC_ADDRESS="en_US.UTF-8"
+LC_TELEPHONE="en_US.UTF-8"
+LC_MEASUREMENT="en_US.UTF-8"
+LC_IDENTIFICATION="en_US.UTF-8"
+LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
+```
+
+优选解决方案：
+
+```
+// 查看 locale.conf 文件
+# cat /etc/locale.conf
+// en_US 则正常，zh_CN 需要修改为 en_US
+LANG="en_US.UTF-8"
+
+// 加载配置文件即生效，仅当前登录有效，重启变无效。亦可用 . /etc/locale.conf 命令
+# source /etc/locale.conf
+
+// root 用户在 /etc/profile.d/ 添加 locale.sh，系统启动会自动加载
+# cat > /etc/profile.d/locale.sh
+. /etc/locale.conf
+```
+
+
 
 
 

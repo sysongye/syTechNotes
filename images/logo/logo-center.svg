@@ -1,0 +1,92 @@
+<svg width="2520" height="1160" xmlns="http://www.w3.org/2000/svg">
+
+<!-- <rect width="800" height="800" style="fill:#aaa" ></rect> -->
+<!-- <rect width="2520" height="1160" style="fill:#eee" ></rect> -->
+
+<!-- <circle cx="400" cy="400" r="400" fill="#eea"></circle>
+
+<rect x="117.157287525381" y="117.157287525381" width="565.685424949238" height="565.685424949238" fill="#ddd" transform-origin="center" transform="rotate(45)"  ></rect>
+
+<circle cx="400" cy="400" r="360" fill="#ee6"></circle>
+ -->
+<!-- r=360
+     2r=c=720
+     2a^2=c^2
+     a^2=259200
+     w=h=a=509.1168824543142
+     x=400-254.5584412271571=145.4415587728429 
+     a2^2=r^2/2=360*360/2=64800
+     a2=254.5584412271571
+     a3^2=r2^2/2=80*80/2=3200
+     a3=56.5685424949238
+     400-28.2842712474619=371.7157287525381 -->
+
+<!-- <rect x="145.4415587728429" y="145.4415587728429" width="509.1168824543142" height="509.1168824543142" fill="#ccc" transform-origin="center" transform="rotate(45)"  ></rect>
+
+<circle cx="400" cy="400" r="254.5584412271571" fill="#ee4"></circle>
+
+<rect x="220" y="220" width="360" height="360" fill="#aaa"></rect>
+<rect x="360" y="360" width="80" height="80" fill="#999"></rect>
+
+<circle cx="400" cy="400" r="40" fill="#888"></circle>
+ -->
+<!-- <rect x="371.7157287525381" y="371.7157287525381" width="56.5685424949238" height="56.5685424949238" fill="#666" transform-origin="center" transform="rotate(45)"></rect> -->
+
+<g>
+<!-- <polygon points="220,220 300,220 400,360 400,400 360,400 220,300" style="fill:#555"/>
+<polygon points="220,220 400,40 580,220 500,220 400,80 300,220" style="fill:#555"/> -->
+<!-- <polygon points="220,220 300,220 400,360 400,400 360,400 220,300" style="fill:#555; stroke:#ff6700; stroke-width:1"/>
+<polygon points="220,220 400,40 580,220 500,220 400,80 300,220" style="fill:#555; stroke:#ff6700;stroke-width:1"/> -->
+ <!-- <polygon points="400,80 400,40 580,220 500,220 " style="fill:#555; stroke:#ff6700;stroke-width:1"/>
+<polygon points="400,40 400,80 300,220 220,220" style="fill:#555; stroke:#ff6700;stroke-width:1"/> -->
+</g>
+<g transform-origin="center" transform="rotate(180)">
+<!-- <polygon points="220,220 300,220 400,360 400,400 360,400 220,300" style="fill:#555"/>
+<polygon points="220,220 400,40 580,220 500,220 400,80 300,220" style="fill:#555"/> -->
+<!-- <g transform-origin="center" transform="rotate(180)">
+<polygon points="220,220 300,220 400,360 400,400 360,400 220,300" style="fill:#555; stroke:#ff6700; stroke-width:1"/>
+<polygon points="220,220 400,40 580,220 500,220 400,80 300,220" style="fill:#555; stroke:#ff6700;stroke-width:1"/> -->
+</g>
+
+<!-- 
+s 80 -140
+o 80+360+40=480 +260
+n 80+360+40+360+40=880 +660
+g 1280 +1060 +360
+y 1680 +1460 +280
+e 2080 +1860
+ -->
+<polygon id="word-s" points="80,220 260,40 440,220 360,220 260,80 160,220 260,360 300,400 440,500 440,580 260,760 80,580 160,580 260,720 360,580 260,440 220,400 80,300" style="fill:#00CD00"/>
+
+<polygon id="word-o" points="660,400 700,400 840,500 840,580 660,760 480,580 480,500 620,400 660,400 660,440 560,580 660,720 760,580 660,440" style="fill:#00CD00"/>
+
+<!-- <polygon id="word-n" points="220,580 220,500 360,400 440,400 580,500 680,400 720,400 580,580 500,580 400,440 300,580" style="fill:#00CD00"/> -->
+
+<polygon id="word-n" points="880,580 880,500 1020,400 1100,400 1240,500 1240,580 1060,760 1060,720 1160,580 1060,440 960,580" style="fill:#00CD00"/>
+
+<!-- <polygon id="word-n" points="880,580 880,500 1020,400 1100,400 1240,500 1240,580 1160,580 1060,440 960,580 1060,720 1060,760" style="fill:#00CD00"/> -->
+
+<polygon id="word-g" points="1460,640 1560,500 1460,360 1360,500 1460,640 1500,680 1640,780 1640,860 1460,1040 1280,860 1360,860 1460,1000 1560,860 1460,720 1420,680 1280,580 1280,500 1460,320 1640,500 1640,580 1500,680" style="fill:#00CD00"/>
+
+<!-- <polygon id="word-y" points="220,220 300,220 400,360 500,220 580,220 580,300 440,400 400,440 300,580 220,580 220,500 360,400 220,300" style="fill:#00CD00"/> -->
+
+<!-- <polygon id="word-y" points="1680,400 1760,400 1860,540 1960,400 2040,400 2040,480 1900,580 1860,940 1820,580 1680,480" style="fill:#00CD00"/> -->
+
+<polygon id="word-y" points="1680,500 1760,500 1860,640 1960,500 2040,500 2040,580 1900,680 1870,1030 1860,1040 1850,1030 1820,680 1680,580" style="fill:#00CD00"/>
+
+<!-- <polygon id="word-e" points="220,220 400,40 580,220 500,220 400,80 300,220 400,360 440,400 400,440 300,580 400,720 500,580 580,580 400,760 220,580 220,500 360,400 220,300" style="fill:#00CD00"/> -->
+
+<!-- <polygon id="word-e" points="300,580 500,580 400,440 300,580 400,720 540,620 400,760 220,580 220,500  360,400 440,400 580,500 580,580 540,620" style="fill:#00CD00"/> -->
+
+<polygon id="word-e" points="2160,580 2340,552 2260,440 2160,580 2260,720 2400,620 2260,760 2080,580 2080,500 2220,400 2300,400 2440,500 2440,580 2420,600" style="fill:#00CD00"/>
+
+<line x1="0" y1="40" x2="2600" y2="40" style="fill:none;stroke:#ddd;stroke-width:2" />
+<line x1="0" y1="400" x2="2600" y2="400" style="fill:none;stroke:#ddd;stroke-width:2" />
+<line x1="0" y1="580" x2="2600" y2="580" style="fill:none;stroke:#ddd;stroke-width:2" />
+<line x1="0" y1="760" x2="2600" y2="760" style="fill:none;stroke:#ddd;stroke-width:2" />
+<line x1="0" y1="1120" x2="2600" y2="1120" style="fill:none;stroke:#ddd;stroke-width:2" />
+
+<line x1="80" y1="0" x2="80" y2="1160" style="fill:none;stroke:#ddd;stroke-width:2" />
+<line x1="2440" y1="0" x2="2440" y2="1160" style="fill:none;stroke:#ddd;stroke-width:2" />
+
+</svg>

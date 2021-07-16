@@ -20,7 +20,7 @@
 
 Next
 
-![SecureCRT](../images/SecureCRT/SecureCRT001.png "License Agreement") 
+![SecureCRT](./images/SecureCRT/SecureCRT001.png "License Agreement") 
 
 
 
@@ -28,7 +28,7 @@ Next
 
 Next
 
-![SecureCRT](../images/SecureCRT/SecureCRT002.png "Select Profile Options") 
+![SecureCRT](./images/SecureCRT/SecureCRT002.png "Select Profile Options") 
 
 
 
@@ -36,7 +36,7 @@ Next
 
 Next
 
-![SecureCRT](../images/SecureCRT/SecureCRT003.png "Setup Type") 
+![SecureCRT](./images/SecureCRT/SecureCRT003.png "Setup Type") 
 
 
 
@@ -44,7 +44,7 @@ Next
 
 SecureFX 破解器版本不对，可以不安装FX，Next
 
-![SecureCRT](../images/SecureCRT/SecureCRT004.png "Custom Setup") 
+![SecureCRT](./images/SecureCRT/SecureCRT004.png "Custom Setup") 
 
 
 
@@ -52,7 +52,7 @@ SecureFX 破解器版本不对，可以不安装FX，Next
 
 Next
 
-![SecureCRT](../images/SecureCRT/SecureCRT005.png "Select Application Icon Options") 
+![SecureCRT](./images/SecureCRT/SecureCRT005.png "Select Application Icon Options") 
 
 
 
@@ -60,7 +60,7 @@ Next
 
 Next
 
-![SecureCRT](../images/SecureCRT/SecureCRT006.png "Ready to Install the Program") 
+![SecureCRT](./images/SecureCRT/SecureCRT006.png "Ready to Install the Program") 
 
 
 
@@ -68,7 +68,7 @@ Next
 
 Finish
 
-![SecureCRT](../images/SecureCRT/SecureCRT007.png "InstallShield Wizard Completed") 
+![SecureCRT](./images/SecureCRT/SecureCRT007.png "InstallShield Wizard Completed") 
 
 
 
@@ -76,41 +76,41 @@ Finish
 
 复制文件 Keygen.exe 到安装目录，管理员运行，确认都有数据后，Patch 选 SecureCRT.exe 打补丁
 
-![SecureCRT](../images/SecureCRT/SecureCRT008.png "Patch") 
+![SecureCRT](./images/SecureCRT/SecureCRT008.png "Patch") 
 
-![SecureCRT](../images/SecureCRT/SecureCRT009.png "SecureCRT.exe") 
+![SecureCRT](./images/SecureCRT/SecureCRT009.png "SecureCRT.exe") 
 
 OK，继续选择 LicenseHelper.exe 打补丁
 
-![SecureCRT](../images/SecureCRT/SecureCRT010.png "LicenseHelper.exe") 
+![SecureCRT](./images/SecureCRT/SecureCRT010.png "LicenseHelper.exe") 
 
 OK 后打开 SecureCRT，Enter License Data...，License Wizard 直接 Next
 
-![SecureCRT](../images/SecureCRT/SecureCRT011.png "Enter License Data...") 
+![SecureCRT](./images/SecureCRT/SecureCRT011.png "Enter License Data...") 
 
 Enter License Manually
 
-![SecureCRT](../images/SecureCRT/SecureCRT012.png "Enter License Manually") 
+![SecureCRT](./images/SecureCRT/SecureCRT012.png "Enter License Manually") 
 
 填写对应信息
 
-![SecureCRT](../images/SecureCRT/SecureCRT013.png "填写对应信息") 
+![SecureCRT](./images/SecureCRT/SecureCRT013.png "填写对应信息") 
 
 填写对应信息
 
-![SecureCRT](../images/SecureCRT/SecureCRT014.png "填写对应信息") 
+![SecureCRT](./images/SecureCRT/SecureCRT014.png "填写对应信息") 
 
 填写对应信息
 
-![SecureCRT](../images/SecureCRT/SecureCRT015.png "填写对应信息") 
+![SecureCRT](./images/SecureCRT/SecureCRT015.png "填写对应信息") 
 
 破解成功
 
-![SecureCRT](../images/SecureCRT/SecureCRT016.png "破解成功") 
+![SecureCRT](./images/SecureCRT/SecureCRT016.png "破解成功") 
 
 运行软件设置密码，暂不需要
 
-![SecureCRT](../images/SecureCRT/SecureCRT017.png "设置密码") 
+![SecureCRT](./images/SecureCRT/SecureCRT017.png "设置密码") 
 
 
 
@@ -118,7 +118,7 @@ Enter License Manually
 
 有效期一年
 
-![SecureCRT](../images/SecureCRT/SecureCRT018.png "有效期一年") 
+![SecureCRT](./images/SecureCRT/SecureCRT018.png "有效期一年") 
 
 
 

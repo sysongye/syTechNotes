@@ -18,16 +18,16 @@
 
 #### 选择安装路径:
 
-![hsk](../images/HskDDNS/HskDDNS001.png "选择安装路径") 
+![hsk](./images/HskDDNS/HskDDNS001.png "选择安装路径") 
 
 安装
 
-![hsk](../images/HskDDNS/HskDDNS002.png "完成") 
+![hsk](./images/HskDDNS/HskDDNS002.png "完成") 
 
 
 
 ### 检测
-![hsk](../images/HskDDNS/HskDDNS003.png "界面") 
+![hsk](./images/HskDDNS/HskDDNS003.png "界面") 
 
 
 

@@ -18,13 +18,13 @@
 
 Next
 
-![Node](../images/Node/Node001.png "Welcome") 
+![Node](./images/Node/Node001.png "Welcome") 
 
 
 
 #### End-User License Agreement:
 
-![Node](../images/Node/Node002.png "End-User License Agreement") 
+![Node](./images/Node/Node002.png "End-User License Agreement") 
 
 
 
@@ -32,7 +32,7 @@ Next
 
 选择安装路径
 
-![Node](../images/Node/Node003.png "Destination Folder") 
+![Node](./images/Node/Node003.png "Destination Folder") 
 
 
 
@@ -40,7 +40,7 @@ Next
 
 按需安装，一般全装
 
-![Node](../images/Node/Node004.png "Custom Setup") 
+![Node](./images/Node/Node004.png "Custom Setup") 
 
 
 
@@ -48,19 +48,19 @@ Next
 
 本地模块工具，有些模块安装可能需要用到这些工具，勾选安装完 `Node.js` 会自动弹框 `Windows PowerShell` 安装
 
-![Node](../images/Node/Node005.png "Tools for Native Modules") 
+![Node](./images/Node/Node005.png "Tools for Native Modules") 
 
 
 
 #### Ready to install Node.js:
 
-![Node](../images/Node/Node006.png "Ready to install Node.js") 
+![Node](./images/Node/Node006.png "Ready to install Node.js") 
 
 
 
 #### Finish:
 
-![Node](../images/Node/Node007.png "Finish") 
+![Node](./images/Node/Node007.png "Finish") 
 
 
 
@@ -68,7 +68,7 @@ Next
 
 前面勾选 Automatically Install 会自动弹框，需要按任意键继续，不想装可以直接关终端
 
-![Node](../images/Node/Node008.png "Tools Install") 
+![Node](./images/Node/Node008.png "Tools Install") 
 
 
 

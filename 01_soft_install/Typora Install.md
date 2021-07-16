@@ -15,25 +15,25 @@
 
 #### Select Destination Location:
 
-![Typora](../images/Typora/Typora001.png "Select Destination Location")  
+![Typora](./images/Typora/Typora001.png "Select Destination Location")  
 
 #### Select Additional Tasks:
 
-![Typora](../images/Typora/Typora002.png "Select Additional Tasks") 
+![Typora](./images/Typora/Typora002.png "Select Additional Tasks") 
 
 #### Ready to Install:
 
-![Typora](../images/Typora/Typora003.png "Ready to Install") 
+![Typora](./images/Typora/Typora003.png "Ready to Install") 
 
 Finish
 
-![Typora](../images/Typora/Typora004.png "Finish") 
+![Typora](./images/Typora/Typora004.png "Finish") 
 
 
 
 ### 检测
 
-![Typora](../images/Typora/Typora005.png) 
+![Typora](./images/Typora/Typora005.png) 
 
 
 

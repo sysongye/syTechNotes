@@ -48,9 +48,9 @@ npm install
 npm run build
 ```
 
-![VueDevTools](../images/VueDevTools/VueDevTools001.png "Git Bash Here") 
+![VueDevTools](./images/VueDevTools/VueDevTools001.png "Git Bash Here") 
 
-![VueDevTools](../images/VueDevTools/VueDevTools002.png "Git Bash Here") 
+![VueDevTools](./images/VueDevTools/VueDevTools002.png "Git Bash Here") 
 
 
 
@@ -62,9 +62,9 @@ chrome://extensions/
 
 `npm run build` 编译打包成功后会在 shells 下生成 chrome 扩展程序文件夹，`Load unpacked` 选择该文件夹
 
-![VueDevTools](../images/VueDevTools/VueDevTools003.png "拓展插件") 
+![VueDevTools](./images/VueDevTools/VueDevTools003.png "拓展插件") 
 
-![VueDevTools](../images/VueDevTools/VueDevTools004.png "拓展插件") 
+![VueDevTools](./images/VueDevTools/VueDevTools004.png "拓展插件") 
 
 
 
@@ -99,7 +99,7 @@ about:addons
 
 回到 about:addons
 
-![VueDevTools](../images/VueDevTools/VueDevTools005.png "拓展插件") 
+![VueDevTools](./images/VueDevTools/VueDevTools005.png "拓展插件") 
 
 
 
@@ -107,11 +107,11 @@ about:addons
 
 #### Chrome
 
-![VueDevTools](../images/VueDevTools/VueDevTools004.png "拓展插件") 
+![VueDevTools](./images/VueDevTools/VueDevTools004.png "拓展插件") 
 
 #### Firefox
 
-![VueDevTools](../images/VueDevTools/VueDevTools005.png "拓展插件") 
+![VueDevTools](./images/VueDevTools/VueDevTools005.png "拓展插件") 
 
 
 

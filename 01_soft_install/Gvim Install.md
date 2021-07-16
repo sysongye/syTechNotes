@@ -16,17 +16,17 @@
 
 #### Installer Language:
 
-![Gvim](../images/Gvim/Gvim001.png "Installer Language") 
+![Gvim](./images/Gvim/Gvim001.png "Installer Language") 
 
 Next
 
-![Gvim](../images/Gvim/Gvim002.png "Next") 
+![Gvim](./images/Gvim/Gvim002.png "Next") 
 
 
 
 #### License Agreement:
 
-![Gvim](../images/Gvim/Gvim003.png "License Agreement") 
+![Gvim](./images/Gvim/Gvim003.png "License Agreement") 
 
 
 
@@ -34,7 +34,7 @@ Next
 
 目前需求默认典型安装即可
 
-![Gvim](../images/Gvim/Gvim004.png "Choose Components") 
+![Gvim](./images/Gvim/Gvim004.png "Choose Components") 
 
 
 
@@ -42,7 +42,7 @@ Next
 
 目前需求默认配置即可
 
-![Gvim](../images/Gvim/Gvim005.png "Choose _vimrc settings") 
+![Gvim](./images/Gvim/Gvim005.png "Choose _vimrc settings") 
 
 
 
@@ -50,11 +50,11 @@ Next
 
 选择安装目录
 
-![Gvim](../images/Gvim/Gvim006.png "Choose Install Location") 
+![Gvim](./images/Gvim/Gvim006.png "Choose Install Location") 
 
 Finish
 
-![Gvim](../images/Gvim/Gvim007.png "Finish") 
+![Gvim](./images/Gvim/Gvim007.png "Finish") 
 
 
 
@@ -91,7 +91,7 @@ language messages zh_CN.utf-8
 
 
 ### 检测
-![Gvim](../images/Gvim/Gvim008.png "Version") 
+![Gvim](./images/Gvim/Gvim008.png "Version") 
 
 
 

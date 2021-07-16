@@ -16,7 +16,7 @@
 
 基本上按默认安装即可，Close
 
-![JDK](../images/JDK/JDK001.png "Done") 
+![JDK](./images/JDK/JDK001.png "Done") 
 
 
 
@@ -29,7 +29,7 @@ JDK9以上版本没有jre，管理员启动CMD
  bin\jlink.exe --module-path jmods --add-modules java.desktop --output jre
 ```
 
-![JDK](../images/JDK/JDK002.png "jlink command") 
+![JDK](./images/JDK/JDK002.png "jlink command") 
 
 **JAVA_HOME**
 
@@ -59,7 +59,7 @@ C:\Program Files\Java\jdk-15\jre
 
 **资源管理器或开始菜单 --> 我的电脑 --> 属性 --> 高级系统设置 --> 环境变量**
 
-![JDK](../images/JDK/JDK003.png "Environment")
+![JDK](./images/JDK/JDK003.png "Environment")
 
 
 
@@ -69,7 +69,7 @@ java -version
 javac
 ```
 
-![JDK](../images/JDK/JDK004.png "javac") 
+![JDK](./images/JDK/JDK004.png "javac") 
 
 
 

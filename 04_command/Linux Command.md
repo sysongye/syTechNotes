@@ -40,6 +40,12 @@ iconv -c --verbose  -f utf-8 -t gb2312 index_utf8.html -o index_gb2312.html
 lunix version
 uname -a
 uname -r
+# 查看系统版本信息相关文件，一般有多个
+ll /etc/*release*
+# 系统版本 如 Red Hat 版本文件为 redhat-release
+cat /etc/redhat-release
+# 系统版本信息更详细
+cat /etc/os-release
 
 less /proc/version  -- then q to quit
 less /etc/issue     -- then q to quit
@@ -74,7 +80,7 @@ lsb_release -a
 ## 平台：CentOS8
 
 #############
-##   yum   ##
+##   rpm   ##
 ### 已安装 ###
 
 # 查询系统已安装的rpm包
@@ -82,7 +88,6 @@ rpm -qa
 rpm -qa | grep xx
 
 # 查询系统中一个已知的文件属于哪个rpm包
-
 rpm -qf /path/file_name
 
 # 查询已安装的软件包的相关文件的安装路径

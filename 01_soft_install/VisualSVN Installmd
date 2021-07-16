@@ -18,7 +18,7 @@
 
 Next
 
-​    ![SVN](../images/SVN/SVN001.png "Welcome") 
+​    ![SVN](./images/SVN/SVN001.png "Welcome") 
 
 
 
@@ -26,7 +26,7 @@ Next
 
 Next
 
-​    ![SVN](../images/SVN/SVN002.png "End-User Licence Agreement") 
+​    ![SVN](./images/SVN/SVN002.png "End-User Licence Agreement") 
 
 
 
@@ -34,7 +34,7 @@ Next
 
 默认，都要，Next
 
-​    ![SVN](../images/SVN/SVN003.png "Select Components")
+​    ![SVN](./images/SVN/SVN003.png "Select Components")
 
 
 
@@ -42,41 +42,41 @@ Next
 
 Standard Edition 进入配置
 
-​    ![SVN](../images/SVN/SVN004.png "VisualSVN Server Editions")
+​    ![SVN](./images/SVN/SVN004.png "VisualSVN Server Editions")
 
 #### Initial Server Configuration:
 
 配置好路径，Next
 
-​    ![SVN](../images/SVN/SVN005.png "Initial Server Configuration")
+​    ![SVN](./images/SVN/SVN005.png "Initial Server Configuration")
 
 Install
 
-​    ![SVN](../images/SVN/SVN006.png "Install") 
+​    ![SVN](./images/SVN/SVN006.png "Install") 
 
 Finish，继续安装 TortoiseSVN
 
-​    ![SVN](../images/SVN/SVN007.png "TortoiseSVN")
+​    ![SVN](./images/SVN/SVN007.png "TortoiseSVN")
 
 #### 安装 TortoiseSVN
 
 Next
 
-​    ![SVN](../images/SVN/SVN008.png "TortoiseSVN")
+​    ![SVN](./images/SVN/SVN008.png "TortoiseSVN")
 
 配置安装路径其他默认，或根据需要增删，Next
 
-​    ![SVN](../images/SVN/SVN009.png "TortoiseSVN")
+​    ![SVN](./images/SVN/SVN009.png "TortoiseSVN")
 
 Install
 
-​    ![SVN](../images/SVN/SVN010.png "TortoiseSVN")
+​    ![SVN](./images/SVN/SVN010.png "TortoiseSVN")
 
 Finish
 
 汉化，不需要
 
-​    ![SVN](../images/SVN/SVN011.png "TortoiseSVN") 
+​    ![SVN](./images/SVN/SVN011.png "TortoiseSVN") 
 
 
 
@@ -84,7 +84,7 @@ Finish
 
 右键菜单齐全
 
-​    ![SVN](../images/SVN/SVN012.png "TortoiseSVN")
+​    ![SVN](./images/SVN/SVN012.png "TortoiseSVN")
 
 
 

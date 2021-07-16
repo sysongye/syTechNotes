@@ -26,7 +26,7 @@
 
 选择安装目录，Next
 
-![IDEA](../images/IDEA/IDEA001.png "Choose Install Location") 
+![IDEA](./images/IDEA/IDEA001.png "Choose Install Location") 
 
 
 
@@ -34,7 +34,7 @@
 
 安装选项，64位，关联文件选一下吧
 
-![IDEA](../images/IDEA/IDEA002.png "Installation Options") 
+![IDEA](./images/IDEA/IDEA002.png "Installation Options") 
 
 
 
@@ -42,11 +42,11 @@
 
 创建开始菜单文件夹，默认，开始安装等进度完成
 
-![IDEA](../images/IDEA/IDEA003.png "Choose Start Menu Folder") 
+![IDEA](./images/IDEA/IDEA003.png "Choose Start Menu Folder") 
 
 完成运行
 
-![IDEA](../images/IDEA/IDEA004.png "完成运行") 
+![IDEA](./images/IDEA/IDEA004.png "完成运行") 
 
 
 
@@ -56,7 +56,7 @@
 
 同意继续
 
-![IDEA](../images/IDEA/IDEA005.png "JETBRAINS USER AGREEMENT") 
+![IDEA](./images/IDEA/IDEA005.png "JETBRAINS USER AGREEMENT") 
 
 
 
@@ -64,7 +64,7 @@
 
 数据共享匿名发送？算了Don't Send
 
-![IDEA](../images/IDEA/IDEA006.png "DATA SHARING") 
+![IDEA](./images/IDEA/IDEA006.png "DATA SHARING") 
 
 
 
@@ -72,7 +72,7 @@
 
 UI 主题，风格看自己喜欢
 
-![IDEA](../images/IDEA/IDEA007.png "Set UI theme") 
+![IDEA](./images/IDEA/IDEA007.png "Set UI theme") 
 
 
 
@@ -80,7 +80,7 @@ UI 主题，风格看自己喜欢
 
 默认插件，默认都开启，可以自定义需要部分或禁用，开发和学习暂时没理由不要，默认 Next
 
-![IDEA](../images/IDEA/IDEA008.png "Default Plugins") 
+![IDEA](./images/IDEA/IDEA008.png "Default Plugins") 
 
 
 
@@ -88,9 +88,9 @@ UI 主题，风格看自己喜欢
 
 功能插件后面需要再装也可以，开始使用，选试用
 
-![IDEA](../images/IDEA/IDEA009.png "Featured plugins") 
+![IDEA](./images/IDEA/IDEA009.png "Featured plugins") 
 
-![IDEA](../images/IDEA/IDEA010.png "Featured plugins") 
+![IDEA](./images/IDEA/IDEA010.png "Featured plugins") 
 
 
 
@@ -98,15 +98,15 @@ UI 主题，风格看自己喜欢
 
 打开后新建项目进入可编辑界面，将 **jetbrains-agent.jar** 拖入到程序中，弹框 **Restart**
 
-![IDEA](../images/IDEA/IDEA011.png "破解") 
+![IDEA](./images/IDEA/IDEA011.png "破解") 
 
-![IDEA](../images/IDEA/IDEA012.png "破解") 
+![IDEA](./images/IDEA/IDEA012.png "破解") 
 
 
 
 #### 激活成功
 
-![IDEA](../images/IDEA/IDEA013.png "激活成功") 
+![IDEA](./images/IDEA/IDEA013.png "激活成功") 
 
 
 

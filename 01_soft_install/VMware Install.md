@@ -16,7 +16,7 @@ VMware官网下载：https://www.vmware.com/products/workstation-pro/workstation
 
 Next
 
-![VMware](../images/VMware/VMware001.png "Next") 
+![VMware](./images/VMware/VMware001.png "Next") 
 
 
 
@@ -24,7 +24,7 @@ Next
 
 I accept, Next
 
-![VMware](../images/VMware/VMware002.png "End-User License Agreement") 
+![VMware](./images/VMware/VMware002.png "End-User License Agreement") 
 
 
 
@@ -32,7 +32,7 @@ I accept, Next
 
 选择安装路径，都选，Next
 
-![VMware](../images/VMware/VMware003.png "Custom Setup") 
+![VMware](./images/VMware/VMware003.png "Custom Setup") 
 
 
 
@@ -40,7 +40,7 @@ I accept, Next
 
 检查更新去掉，用户体验去掉，Next
 
-![VMware](../images/VMware/VMware004.png "User Experience Settings") 
+![VMware](./images/VMware/VMware004.png "User Experience Settings") 
 
 
 
@@ -48,13 +48,13 @@ I accept, Next
 
 桌面图标开始菜单目录，Next
 
-![VMware](../images/VMware/VMware005.png "Shortcuts") 
+![VMware](./images/VMware/VMware005.png "Shortcuts") 
 
 Install, Finish
 
-![VMware](../images/VMware/VMware006.png "Install") 
+![VMware](./images/VMware/VMware006.png "Install") 
 
-![VMware](../images/VMware/VMware007.png "Finish") 
+![VMware](./images/VMware/VMware007.png "Finish") 
 
 安装完成重启电脑运行虚拟机，直接选输入密匙，忘记截图类似这张，输入密匙完成
 
@@ -64,12 +64,12 @@ YF390-0HF8P-M81RQ-2DXQE-M2UT6
 ZF71R-DMX85-08DQY-8YMNC-PPHV8
 ```
 
-![VMware](../images/VMware/VMware008.png "Finish") 
+![VMware](./images/VMware/VMware008.png "Finish") 
 
 
 
 ### 检测
-![VMware](../images/VMware/VMware009.png "Finish") 
+![VMware](./images/VMware/VMware009.png "Finish") 
 
 
 

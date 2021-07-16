@@ -28,11 +28,19 @@
 
 
 
-## 04_linux_command
+## 04_command
 
 -- dir
 
--- Linux 系统常用命令笔记 / Common command notes on Linux.
+-- 常用命令笔记 / Common command notes.
+
+
+
+## 05_technology_stack
+
+-- dir
+
+-- 技术栈笔记 / Technology stack notes.
 
 
 
@@ -44,11 +52,20 @@
 
 
 
-
-
 ## README.md
 
 -- file
 
 -- 本说明文档 / This one.
 
+
+
+
+
+
+
+### DONE
+
+
+
+<img src="./images/logo/logo-center.svg" alt="LOGO" title="songye" style="zoom: 5%;" /> 

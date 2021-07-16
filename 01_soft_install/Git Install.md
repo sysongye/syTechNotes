@@ -21,7 +21,7 @@
 
 Next
 
-![Git](../images/Git/Git001.png "Information") 
+![Git](./images/Git/Git001.png "Information") 
 
 
 
@@ -29,7 +29,7 @@ Next
 
 选择安装路径，Next
 
-![Git](../images/Git/Git002.png "Select Destination Location") 
+![Git](./images/Git/Git002.png "Select Destination Location") 
 
 
 
@@ -39,7 +39,7 @@ Next
 
 Next
 
-![Git](../images/Git/Git003.png "Select Components") 
+![Git](./images/Git/Git003.png "Select Components") 
 
 
 
@@ -47,7 +47,7 @@ Next
 
 开始菜单文件夹，不需要就 Don't create，Next
 
-![Git](../images/Git/Git004.png "Select Start Menu Folder") 
+![Git](./images/Git/Git004.png "Select Start Menu Folder") 
 
 
 
@@ -55,7 +55,7 @@ Next
 
 暂时都没装，Vim、Notepad++、Sublime Text 都不错，选项也赞了几乎每个软件，看个人喜欢，Next
 
-![Git](../images/Git/Git005.png "Choosing the default editor used by Git") 
+![Git](./images/Git/Git005.png "Choosing the default editor used by Git") 
 
 ​	**Adjusting your PATH environment:**
 
@@ -67,7 +67,7 @@ Next
 
 默认就好，Next
 
-![Git](../images/Git/Git006.png "Use Git") 
+![Git](./images/Git/Git006.png "Use Git") 
 
 
 
@@ -75,7 +75,7 @@ Next
 
 OpenSSL 库和本地 Windows 安全通道库，默认 OpenSSL，Next
 
-![Git](../images/Git/Git007.png "Choosing HTTPS transport backend") 
+![Git](./images/Git/Git007.png "Choosing HTTPS transport backend") 
 
 
 
@@ -83,7 +83,7 @@ OpenSSL 库和本地 Windows 安全通道库，默认 OpenSSL，Next
 
 配置换行符转换，**Windows-style:** CRLF=\r\n，**Unix-style:** LF=\n，Windows系统推荐默认选项，Next
 
-![Git](../images/Git/Git008.png "Configuring the line ending conversions") 
+![Git](./images/Git/Git008.png "Configuring the line ending conversions") 
 
 
 
@@ -91,7 +91,7 @@ OpenSSL 库和本地 Windows 安全通道库，默认 OpenSSL，Next
 
 终端模拟器，默认 MinTTY 即可，Next
 
-![Git](../images/Git/Git009.png "Configuring the terminal emulator to use with Git Bash") 
+![Git](./images/Git/Git009.png "Configuring the terminal emulator to use with Git Bash") 
 
 
 
@@ -99,7 +99,7 @@ OpenSSL 库和本地 Windows 安全通道库，默认 OpenSSL，Next
 
 pull 默认行为 Next
 
-![Git](../images/Git/Git010.png "Choose the default behavior of `git pull`") 
+![Git](./images/Git/Git010.png "Choose the default behavior of `git pull`") 
 
 
 
@@ -107,7 +107,7 @@ pull 默认行为 Next
 
 凭据助手，默认 Next
 
-![Git](../images/Git/Git011.png "Choose a credential helper") 
+![Git](./images/Git/Git011.png "Choose a credential helper") 
 
 
 
@@ -115,7 +115,7 @@ pull 默认行为 Next
 
 额外选项，文件缓存，Next
 
-![Git](../images/Git/Git012.png "Configuring extra options") 
+![Git](./images/Git/Git012.png "Configuring extra options") 
 
 
 
@@ -125,15 +125,15 @@ Git Bash 新支持不通过 winpty 运行诸如 Node/Python 的程序，不过�
 
 Finish，继续安装 TortoiseGit
 
-![Git](../images/Git/Git013.png "Configuring experimental options") 
+![Git](./images/Git/Git013.png "Configuring experimental options") 
 
 Next
 
-![Git](../images/Git/Git014.png "TortoiseGit") 
+![Git](./images/Git/Git014.png "TortoiseGit") 
 
 Next
 
-![Git](../images/Git/Git015.png "TortoiseGit") 
+![Git](./images/Git/Git015.png "TortoiseGit") 
 
 
 
@@ -141,7 +141,7 @@ Next
 
 SSH 客户端，默认 Next
 
-![Git](../images/Git/Git016.png "Choose SSH Client") 
+![Git](./images/Git/Git016.png "Choose SSH Client") 
 
 
 
@@ -149,15 +149,15 @@ SSH 客户端，默认 Next
 
 选择需要功能，安装路径，Next，Install
 
-![Git](../images/Git/Git017.png "Custom Setup") 
+![Git](./images/Git/Git017.png "Custom Setup") 
 
 Finish，汉化，不需要。进入初次运行配置
 
-![Git](../images/Git/Git018.png "Finish") 
+![Git](./images/Git/Git018.png "Finish") 
 
 没得选，Next
 
-![Git](../images/Git/Git019.png "Finish") 
+![Git](./images/Git/Git019.png "Finish") 
 
 
 
@@ -165,7 +165,7 @@ Finish，汉化，不需要。进入初次运行配置
 
 默认自动识别 Git 安装路径，如果没有识别，确认先安装 Git，Check now，Next
 
-![Git](../images/Git/Git020.png "Configure git.exe") 
+![Git](./images/Git/Git020.png "Configure git.exe") 
 
 
 
@@ -173,18 +173,18 @@ Finish，汉化，不需要。进入初次运行配置
 
 暂时不设置，Next
 
-![Git](../images/Git/Git021.png "Configure user information") 
+![Git](./images/Git/Git021.png "Configure user information") 
 
 使用时再根据需要设置，Finish
 
-![Git](../images/Git/Git022.png "Finish") 
+![Git](./images/Git/Git022.png "Finish") 
 
 
 
 ### 检测
 右键菜单齐全
 
-![Git](../images/Git/Git023.png "右键菜单") 
+![Git](./images/Git/Git023.png "右键菜单") 
 
 
 

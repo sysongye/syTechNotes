@@ -22,7 +22,7 @@
 
 选择安装路径，Next
 
-![Sublime](../images/SublimeText/Sublime001.png "选择安装路径") 
+![Sublime](./images/SublimeText/Sublime001.png "选择安装路径") 
 
 
 
@@ -30,7 +30,7 @@
 
 添加右键菜单，Next
 
-![Sublime](../images/SublimeText/Sublime002.png "添加右键菜单") 
+![Sublime](./images/SublimeText/Sublime002.png "添加右键菜单") 
 
 
 
@@ -38,9 +38,9 @@
 
 确认信息，Install , Finish
 
-![Sublime](../images/SublimeText/Sublime003.png "Install") 
+![Sublime](./images/SublimeText/Sublime003.png "Install") 
 
-![Sublime](../images/SublimeText/Sublime004.png "Finish") 
+![Sublime](./images/SublimeText/Sublime004.png "Finish") 
 
 
 
@@ -50,7 +50,7 @@
 
 accept, Next
 
-![Sublime](../images/SublimeText/Sublime005.png "License Agreement") 
+![Sublime](./images/SublimeText/Sublime005.png "License Agreement") 
 
 
 
@@ -58,7 +58,7 @@ accept, Next
 
 Next
 
-![Sublime](../images/SublimeText/Sublime006.png "Select Destination Location") 
+![Sublime](./images/SublimeText/Sublime006.png "Select Destination Location") 
 
 
 
@@ -66,13 +66,13 @@ Next
 
 Next
 
-![Sublime](../images/SublimeText/Sublime007.png "Select Start Menu Folder") 
+![Sublime](./images/SublimeText/Sublime007.png "Select Start Menu Folder") 
 
 Install, Finish
 
-![Sublime](../images/SublimeText/Sublime008.png "Install") 
+![Sublime](./images/SublimeText/Sublime008.png "Install") 
 
-![Sublime](../images/SublimeText/Sublime009.png "Finish") 
+![Sublime](./images/SublimeText/Sublime009.png "Finish") 
 
 
 
@@ -111,18 +111,18 @@ E36B85CC 84991F19 7575D828 470A92AB
 ------ END LICENSE ------
 ```
 
-![Sublime](../images/SublimeText/Sublime010.png "Use License") 
+![Sublime](./images/SublimeText/Sublime010.png "Use License") 
 
 Use License. Thanks for purchasing! 完成破解
 
-![Sublime](../images/SublimeText/Sublime011.png "Thanks for purchasing!") 
+![Sublime](./images/SublimeText/Sublime011.png "Thanks for purchasing!") 
 
 
 
 ### 检测
 **Help --> About Sublime Text**
 
-![Sublime](../images/SublimeText/Sublime012.png "About Sublime Text") 
+![Sublime](./images/SublimeText/Sublime012.png "About Sublime Text") 
 
 
 
