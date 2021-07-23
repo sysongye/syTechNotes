@@ -2,35 +2,86 @@
 
 [TOC]
 
-### 简介
+平台：CentOS Linux release 8.2.2004 (Core)
+
+Docker：Docker version 20.10.7
+
+
+
+## 简介
 
 ​		基于 Docker 部署的 Spring Cloud 开发环境
 
 
 
-#### 整体目录结构
+### 整体目录结构
 
 ```
-/root/software
- |- dkfile
- |- jdk
- |- mysql
- |- python
+/home/Software
+  |- CentOS
+    |- Python
+  |- Elasticsearch
+  |- JDK
+  |- Jenkins
+  |- Kafka
+  |- Kibana
+  |- Logstash
+  |- Mycat
+  |- MySQL
+  |- Nexus
+  |- Nginx
+  |- RabbitMQ
+  |- Redis
+  |- Shipyard
+  |- Sonar
+  |- Tengine
+  |- Tomcat
+
+mkdir -p /home/Software/CentOS/Python
+mkdir -p /home/Software/Elasticsearch
+mkdir -p /home/Software/JDK
+mkdir -p /home/Software/Jenkins
+mkdir -p /home/Software/Kafka
+mkdir -p /home/Software/Kibana
+mkdir -p /home/Software/Logstash
+mkdir -p /home/Software/Mycat
+mkdir -p /home/Software/MySQL
+mkdir -p /home/Software/Nexus
+mkdir -p /home/Software/Nginx
+mkdir -p /home/Software/RabbitMQ
+mkdir -p /home/Software/Redis
+mkdir -p /home/Software/Shipyard
+mkdir -p /home/Software/Sonar
+mkdir -p /home/Software/Tengine
+mkdir -p /home/Software/Tomcat
+
 ```
 
 
 
-#### 基础镜像环境
+### 基础镜像环境
 
 ​		用于后续服务环境所依赖运行环境的基层镜像
 
-##### 		centos8	centos8:8
+#### 		Centos8	centos8:8
 
-##### 		JDK	os8jdk8:291
+#### 		JDK	os8jdk8:291
 
-##### 		tomcat
+#### 		Tomcat	os8tomcat:9
 
-##### 		nginx
+#### 		Nginx	os8nginx:1.20
+
+
+
+```
+centos                  latest    300e315adb2f   7 months ago     209MB
+alpine                  latest    d4ff818577bc   5 weeks ago      5.6MB
+rethinkdb               latest    3f37e5daf5bd   2 months ago     131MB
+swarm                   latest    1a5eb59a410f   10 months ago    12.7MB
+shipyard/shipyard       latest    36fb3dc0907d   4 years ago      58.8MB
+shipyard/docker-proxy   latest    cfee14e5d6f2   5 years ago      9.47MB
+microbox/etcd           latest    6aef84b9ec5a   5 years ago      17.9MB
+```
 
 
 
@@ -38,101 +89,47 @@ docker network create --subnet=192.168.10.0/24 envsy
 
 
 
-#### 基础服务环境
+### 基础服务环境
 
-##### Shipyard
+#### Shipyard
 
-```
-docker pull alpine
-docker pull swarm
-docker pull rethinkdb
-docker pull microbox/etcd
-docker pull shipyard/docker-proxy
-docker pull shipyard/shipyard
+##### 	docker pull alpine
 
-docker run -itd --restart=always --name shipyard-rethinkdb rethinkdb
-docker run -itd --restart=always -p 4001:4001 -p 7001:7001 \
- --name shipyard-discovery microbox/etcd:latest --name discovery
-docker run -itd --restart=always -p 2375:2375 --hostname=$HOSTNAME \
- -v /var/run/docker.sock:/var/run/docker.sock -e PORT=2375 \
- --name shipyard-proxy shipyard/docker-proxy:latest
-docker run -itd --restart=always --name shipyard-swarm-manager swarm:latest \
- manage --host tcp://0.0.0.0:3375 etcd://<ip4-addr>:4001
-docker run -itd --restart=always --name shipyard-swarm-agent swarm:latest \
- join --addr <ip4-addr>:2375 etcd://<ip4-addr>:4001
-docker run -itd --restart=always -p 8080:8080 \
- --link shipyard-rethinkdb:rethinkdb --link shipyard-swarm-manager:swarm \
- --name shipyard-controller shipyard/shipyard:latest server -d tcp://swarm:3375
+##### 	docker pull swarm
 
-docker run -itd --restart=always --name shipyard-rethinkdb rethinkdb
-docker run -itd --restart=always -p 4001:4001 -p 7001:7001 \
- --name shipyard-discovery microbox/etcd:latest --name discovery
-docker run -itd --restart=always -p 2375:2375 --hostname=$HOSTNAME \
- -v /var/run/docker.sock:/var/run/docker.sock -e PORT=2375 \
- --name shipyard-proxy shipyard/docker-proxy:latest
-docker run -itd --restart=always --name shipyard-swarm-manager swarm:latest \
- manage --host tcp://0.0.0.0:3375 etcd://121.37.190.139:4001
-docker run -itd --restart=always --name shipyard-swarm-agent swarm:latest \
- join --addr 121.37.190.139:2375 etcd://121.37.190.139:4001
-docker run -itd --restart=always -p 8080:8080 \
- --link shipyard-rethinkdb:rethinkdb --link shipyard-swarm-manager:swarm \
- --name shipyard-controller shipyard/shipyard:latest server -d tcp://swarm:3375
+##### 	docker pull rethinkdb
 
-iptables -P FORWARD ACCEPT
-iptables -nL
+##### 	docker pull microbox/etcd
 
-firewall-cmd --zone=public --add-port=22/tcp --permanent
-firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --zone=public --add-port=8080/tcp --permanent
-firewall-cmd --zone=public --add-port=2375/tcp --permanent
-firewall-cmd --zone=public --add-port=3375/tcp --permanent
-firewall-cmd --zone=public --add-port=4001/tcp --permanent
-firewall-cmd --zone=public --add-port=7001/tcp --permanent
+##### 	docker pull shipyard/docker-proxy
 
-firewall-cmd --reload
-
-firewall-cmd --zone=public --list-ports
-
-firewall-cmd --state
-
-firewall-cmd --get-default-zone
-
-firewall-cmd --zone=public --query-service=ssh
-firewall-cmd --permanent --zone=public --add-service=ssh
-firewall-cmd --permanent --zone=public --add-service=http
-firewall-cmd --permanent --zone=public --add-service=https
-
-# SELinux
-sestatus
-getenforce
-setenforce 0
-```
+##### 	docker pull shipyard/shipyard
 
 
 
-##### 		Elasticsearch
+#### 		Elasticsearch	jdk8elksearch:7.13
 
-##### 		Jenkins
+#### 		Jenkins	cat9jenkins:2.289
 
-##### 		Kafka
+#### 		Kafka	jdk8kafka:2.8
 
-##### 		Kibana
+#### 		Kibana	jdk8elkkibana:7.13
 
-##### 		Logstash
+#### 		Logstash	jdk8elklogstash:7.13
 
-##### 		Mycat
+#### 		Mycat	jdk8mycat:1.6.7
 
-##### 		MySQL
+#### 		MySQL	os8mysql:5.7.32
 
-##### 		Nexus
+#### 		Nexus	jdk8nexus:3.32
 
-##### 		RabbitMQ
+#### 		RabbitMQ	jdk8rabbitmq:3.8.16
 
-##### 		Redis
+#### 		Redis	os8redis:6.2
 
-##### 		Sonar
+#### 		Sonar	jdk8sonar:8.9
 
-##### 		Tengine
+#### 		Tengine	os8tengine:2.3
 
 
 

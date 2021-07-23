@@ -1,38 +1,39 @@
-# <font color=#69D600>os8jdk8:291 Dockerfile</font>
+# <font color=#69D600>jdk8elklogstash:7.13 Dockerfile</font>
 
 [TOC]
 
-#### Version: os8jdk8:291
+#### Version: jdk8elklogstash:7.13
 
 平台：CentOS Linux release 8.2.2004 (Core)
 
 Docker：Docker version 20.10.7
 
-> Note: 以 centos8:8 镜像作为基础
+> Note: 以 os8jdk8:291 镜像作为基础
 
 
 
 ### 下载文件
 
+> Note: 文件较大。Elasticsearch + Logstash + Kibana 版本尽量保持一致
+
 ```perl
 # 递归创建目录，用于保存下载的文件，目录建议放在数据盘
-mkdir -p /home/Software/JDK
-cd /home/Software/JDK
+mkdir -p /home/Software/Logstash
+cd /home/Software/Logstash
 # 下载文件 系统有 wget 命令的
-wget 失败
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.13.3-linux-x86_64.tar.gz
 # 下载文件 系统有 curl 命令的
-curl -O 失败
+curl -O https://artifacts.elastic.co/downloads/logstash/logstash-7.13.3-linux-x86_64.tar.gz
 
-# Oracle 下载文件需要登录，浏览器下载再上传
 ```
 
 
 
 ### Dockerfile
 
-​		基础镜像 `os8jdk8:291` 的 Dockerfile
+​		基础服务 `jdk8elklogstash:7.13` 的 Dockerfile
 
-​		Filename: dfos8jdk8
+​		Filename: dfjdk8elklogstash
 
 ​		合理利用 &&，减少 RUN 生成中间层镜像。
 
@@ -43,38 +44,55 @@ curl -O 失败
 > Note: 软件的安装方法可能有很多种，不同系统不同版本命令也可能不一样，导致出现无法预料的问题，所以最好先测试 Dockerfile，排查解决好问题，生成正常的 REPOSITORY 而非 <none> ，这样可行的 Dockerfile 再放入 docker compose 里面，方便多台相同配置机器上进行快速部署。
 
 ```
-cd /home/Software/JDK
+cd /home/Software/Logstash
 
 # new
-# Dockerfile new
-cat > dfos8jdk8
-FROM centos8:8
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
-
-RUN mkdir -p /usr/local/java/
-ADD ./jdk-8u291-linux-x64.tar.gz /usr/local/java/
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
-
-EXPOSE 22
-
-
-# old
 # Dockerfile
-cat > dfos8jdk8
-FROM centos8:8
+cat > dfjdk8elklogstash
+FROM os8jdk8:291
 MAINTAINER songye
-LABEL desc="base on centos8:8 image"
+LABEL desc="base on os8jdk8:291 image"
 
-RUN mkdir -p /usr/local/java/
-COPY ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
-WORKDIR /usr/local/java/
-RUN tar zxf jdk-8u291-linux-x64.tar.gz && rm -f jdk-8u291-linux-x64.tar.gz
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+ADD ./logstash-7.13.3-linux-x86_64.tar.gz /usr/local/
+COPY ./logstash.conf /usr/local/logstash-7.13.3/bin/logstash.conf
+COPY ./logstash.yml /usr/local/logstash-7.13.3/config/logstash.yml
 
-EXPOSE 22
+RUN mkdir -p /usr/local/logs
+
+ENTRYPOINT  /usr/local/logstash-7.13.3/bin/logstash -f /usr/local/logstash-7.13.3/bin/logstash.conf
+
+
+# 修改配置文件 logstash.yml
+# ------------ HTTP API Settings -------------
+http.host: "0.0.0.0"
+# X-Pack Monitoring
+xpack.monitoring.enabled: false
+xpack.monitoring.elasticsearch.hosts: http://192.168.100.8:9200
+xpack.monitoring.elasticsearch.username: elksearch
+xpack.monitoring.elasticsearch.password: DevEnv123$
+
+# 添加配置文件 logstash.conf
+cat > logstash.conf
+input{
+     kafka{
+        bootstrap_servers => ["192.168.100.8:9091"]
+        group_id => "test-consumer-group"
+        auto_offset_reset => "latest" 
+        consumer_threads => 5
+        decorate_events => true
+        topics => ["service"]
+        type => "bhy"
+     }
+}
+
+output {
+   elasticsearch{
+     hosts=> ["192.168.100.8:8200"]
+     index=> "service-%{+YYYY.MM.dd}"
+     user => "elksearch"
+     password => "DevEnv123$"
+   }
+} 
 
 ```
 
@@ -91,19 +109,11 @@ EXPOSE 22
 # 不使用缓存，基于 FROM 相同镜像构建时，可能产生和使用相同的缓存，增加该参数则不使用缓存，另外生成新的缓存，即产生更多 REPOSITORY 为 <none> 的镜像，非特殊需求不推荐使用
 --no-cache		Do not use cache when building the image
 
-docker build --force-rm -f dfos8jdk8 -t os8jdk8:291 .
+docker build --force-rm -f dfjdk8elklogstash -t jdk8elklogstash:7.13 .
 
-docker history os8jdk8:291
+docker history jdk8elklogstash:7.13
 
-docker rmi os8jdk8:291
-
-cat > dkfile/dfos8jdk8
-FROM centos
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
-
-RUN mkdir -p /usr/local/java/
-ADD ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
+docker rmi jdk8elklogstash:7.13
 
 ```
 
@@ -123,6 +133,8 @@ docker rm -f $(docker ps -qa)
 docker rmi $(docker images -f "dangling=true" -q)
 
 ```
+
+
 
 
 

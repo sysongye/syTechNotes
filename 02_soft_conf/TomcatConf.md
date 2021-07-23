@@ -1,7 +1,8 @@
-# <font color=#69D600>S Configuration</font>
+# <font color=#69D600>Tomcat Configuration</font>
 
 [TOC]
 
+平台：Windows
 ```
 CATALINA_BASE
 E:\Apps_Install\apache-tomcat-9.0.0.M22

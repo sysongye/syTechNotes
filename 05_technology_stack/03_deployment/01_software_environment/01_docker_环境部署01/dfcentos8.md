@@ -37,11 +37,12 @@ docker pull centos
 > Note: 软件的安装方法可能有很多种，不同系统不同版本命令也可能不一样，导致出现无法预料的问题，所以最好先测试 Dockerfile，排查解决好问题，生成正常的 REPOSITORY 而非 <none> ，这样可行的 Dockerfile 再放入 docker compose 里面，方便多台相同配置机器上进行快速部署。
 
 ```
-cd /root/software
+mkdir -p /home/Software/CentOS/Python
+cd /home/Software/CentOS
 
 # new
 # Dockerfile
-cat > dkfile/dfcentos8
+cat > dfcentos8
 FROM centos
 MAINTAINER songye
 LABEL desc="base on centos:latest image"
@@ -53,14 +54,14 @@ RUN yum install -y langpacks-en glibc-all-langpacks \
     && yum clean all \
     && echo 'root:dksongye' | chpasswd \
     && /usr/bin/ssh-keygen -f id_rsa \
-    && mkdir -p /root/software/python
-COPY ./python/Python-3.9.6.tgz /root/software/python
-WORKDIR /root/software/python
+    && mkdir -p /home/Software/CentOS/Python
+COPY ./Python/Python-3.9.6.tgz /home/Software/CentOS/Python
+WORKDIR /home/Software/CentOS/Python
 # RUN ./configure && make && make test && make install \
 RUN tar zxf Python-3.9.6.tgz && rm -f Python-3.9.6.tgz && cd Python-3.9.6 \
 	&& ./configure && make && make install \
-	&& rm -rf ./*
-RUN python3 -m pip install --upgrade pip setuptools wheel \
+	&& rm -rf ./* \
+    && python3 -m pip install --upgrade pip setuptools wheel \
     && python3 -m pip install supervisor
 
 EXPOSE 22
@@ -81,9 +82,9 @@ RUN yum install -y langpacks-en glibc-all-langpacks \
     && yum clean all \
     && echo 'root:dksongye' | chpasswd \
     && /usr/bin/ssh-keygen -f id_rsa \
-    && mkdir -p /root/software/python
-ADD ./python/Python-3.9.6.tgz /root/software/python
-WORKDIR /root/software/python/Python-3.9.6
+    && mkdir -p /home/software/python
+ADD ./python/Python-3.9.6.tgz /home/software/python
+WORKDIR /home/software/python/Python-3.9.6
 RUN ./configure && make && make install \
 	&& rm -rf ./*
 RUN python3 -m pip install --upgrade pip setuptools wheel \
@@ -107,7 +108,7 @@ CMD /usr/sbin/sshd -D
 # 不使用缓存，基于 FROM 相同镜像构建时，可能产生和使用相同的缓存，增加该参数则不使用缓存，另外生成新的缓存，即产生更多 REPOSITORY 为 <none> 的镜像，非特殊需求不推荐使用
 --no-cache		Do not use cache when building the image
 
-docker build --force-rm -f dkfile/dfcentos8 -t centos8:8 .
+docker build --force-rm -f dfcentos8 -t centos8:8 .
 
 ```
 
@@ -175,46 +176,6 @@ docker build options
 | `--tag` , `-t`            |         | Name and optionally a tag in the 'name:tag' format           |
 | `--target`                |         | Set the target build stage to build.                         |
 | `--ulimit`                |         | Ulimit options                                               |
-
-
-
-
-
-借鉴备份
-
-
-~~~
-docker pull centos:7
-
-cat > dfcentos7
-FROM centos:7
-MAINTAINER songye
-# RUN yum -y update
-RUN yum install -y passwd openssh-server openssh-clients initscripts net-tools
-RUN yum install -y python3-setuptools
-RUN easy_install supervisor
-RUN echo 'root:dksongye' | chpasswd
-RUN /usr/sbin/sshd-keygen
-
-EXPOSE 22
-CMD /usr/sbin/sshd -D
-
-docker build -f dfcentos7 -t centos7 .
-docker run -it --name centos7 300e315adb2f
-
-docker rm -f $(docker ps -qa)
-docker rmi $(docker images -f "dangling=true" -q)
-
-
-### supervisor 通过脚本进行多应用的启动
-
-##### 使用yum install python-setuptools -y来安装supervisor
-
-> 默认的yum安装不了 supervisor
-
-RUN yum install python-setuptools -y
-RUN easy_install supervisor
-~~~
 
 
 

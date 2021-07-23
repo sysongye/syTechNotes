@@ -1,12 +1,44 @@
-# <font color=#69D600>
-
-# Linux Initialization</font>
+# <font color=#69D600>Linux Initialization</font>
 
 [TOC]
 
 ### 平台 CentOS 8
 
 最初环境：最小化安装	Minimal Install
+
+
+
+### 主机名
+
+> 阿里云 Ecs 实例名称及主机名称
+>
+> 实例名称命名规则：
+>
+> - 长度为 [2, 128] 个英文或中文字符，必须以大小字母或中文开头，可以包含数字、点号（.）、半角冒号（:）、下划线（_）或短横线（-）。
+> - 如果没有指定该参数，默认值为实例的 `InstanceId`。
+> - 不能以 http:// 和 https:// 开头。
+>
+> 云服务器主机名称命名规则：
+>
+> - 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。
+> - Windows 实例：名字符长度为 [2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。
+> - 其他类型（Linux 等）实例：字符长度为 [2, 128]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。
+
+命名规范，类似 Java 变量，以上摘自阿里云，但主机名不建议加点号，踩过坑会导致某些应用无法正常运行
+```perl
+# 查看主机名，主要文件 /etc/hostname
+cat /etc/hostname
+sysctl kernel.hostname
+echo $HOSTNAME
+
+# 修改主机名
+echo newHostname > /etc/hostname
+# 临时生效，重启无效，对应文件 /proc/sys/kernel/hostname
+sysctl kernel.hostname=newHostname
+
+```
+
+
 
 
 
@@ -186,6 +218,26 @@ StrictModes yes
 ```
 service ssh restart
 ```
+
+
+
+netstat -tunlp用于显示tcp，udp的端口和进程等相关情况，如下图
+
+命令里的t,u,n,l,p均有不同含义：
+
+-t 仅显示和tcp相关的
+
+-u 仅显示和udp相关的
+
+-n 不限时别名，能显示数字的全部转换为数字
+
+-l  仅显示出于Listen(监听)状态的
+
+-p 显示建立这些连接的程序名
+
+
+
+
 
 
 

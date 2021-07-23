@@ -1,38 +1,39 @@
-# <font color=#69D600>os8jdk8:291 Dockerfile</font>
+# <font color=#69D600>cat9jenkins:2.289 Dockerfile</font>
 
 [TOC]
 
-#### Version: os8jdk8:291
+#### Version: cat9jenkins:2.289
 
 平台：CentOS Linux release 8.2.2004 (Core)
 
 Docker：Docker version 20.10.7
 
-> Note: 以 centos8:8 镜像作为基础
+> Note: 以 os8tomcat:9 镜像作为基础
 
 
 
 ### 下载文件
 
+> Note: 文件较大
+
 ```perl
 # 递归创建目录，用于保存下载的文件，目录建议放在数据盘
-mkdir -p /home/Software/JDK
-cd /home/Software/JDK
+mkdir -p /home/Software/Jenkins
+cd /home/Software/Jenkins
 # 下载文件 系统有 wget 命令的
-wget 失败
+wget https://repo.huaweicloud.com/jenkins/war-stable/2.289.2/jenkins.war
 # 下载文件 系统有 curl 命令的
-curl -O 失败
+curl -O https://repo.huaweicloud.com/jenkins/war-stable/2.289.2/jenkins.war
 
-# Oracle 下载文件需要登录，浏览器下载再上传
 ```
 
 
 
 ### Dockerfile
 
-​		基础镜像 `os8jdk8:291` 的 Dockerfile
+​		基础服务 `cat9jenkins:2.289` 的 Dockerfile
 
-​		Filename: dfos8jdk8
+​		Filename: dfcat9jenkins
 
 ​		合理利用 &&，减少 RUN 生成中间层镜像。
 
@@ -43,38 +44,24 @@ curl -O 失败
 > Note: 软件的安装方法可能有很多种，不同系统不同版本命令也可能不一样，导致出现无法预料的问题，所以最好先测试 Dockerfile，排查解决好问题，生成正常的 REPOSITORY 而非 <none> ，这样可行的 Dockerfile 再放入 docker compose 里面，方便多台相同配置机器上进行快速部署。
 
 ```
-cd /home/Software/JDK
+cd /home/Software/Jenkins
 
 # new
-# Dockerfile new
-cat > dfos8jdk8
-FROM centos8:8
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
-
-RUN mkdir -p /usr/local/java/
-ADD ./jdk-8u291-linux-x64.tar.gz /usr/local/java/
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
-
-EXPOSE 22
-
-
-# old
 # Dockerfile
-cat > dfos8jdk8
-FROM centos8:8
+cat > dfcat9jenkins
+FROM os8tomcat:9
 MAINTAINER songye
-LABEL desc="base on centos8:8 image"
+LABEL desc="base on os8tomcat:9 image"
 
-RUN mkdir -p /usr/local/java/
-COPY ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
-WORKDIR /usr/local/java/
-RUN tar zxf jdk-8u291-linux-x64.tar.gz && rm -f jdk-8u291-linux-x64.tar.gz
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+COPY ./jenkins.war /usr/local/apache-tomcat-9.0.10/webapps/ROOT/
+RUN cd /usr/local/apache-tomcat-9.0.10/webapps/ROOT/ \
+ && rm -rf `ls | grep -v jenkins.war` \
+ && unzip jenkins.war && rm -f jenkins.war \
+ && cd .. && rm -rf `ls | grep -v ROOT` \
+ && yum install -y git maven && yum clean all
 
-EXPOSE 22
+EXPOSE 8090
+ENTRYPOINT /usr/local/apache-tomcat-9.0.10/bin/startup.sh && tail -F /usr/local/apache-tomcat-9.0.10/logs/catalina.out
 
 ```
 
@@ -91,19 +78,13 @@ EXPOSE 22
 # 不使用缓存，基于 FROM 相同镜像构建时，可能产生和使用相同的缓存，增加该参数则不使用缓存，另外生成新的缓存，即产生更多 REPOSITORY 为 <none> 的镜像，非特殊需求不推荐使用
 --no-cache		Do not use cache when building the image
 
-docker build --force-rm -f dfos8jdk8 -t os8jdk8:291 .
+docker build --force-rm -f dfcat9jenkins -t cat9jenkins:2.289 .
 
-docker history os8jdk8:291
+docker history cat9jenkins:2.289
 
-docker rmi os8jdk8:291
+docker rmi cat9jenkins:2.289
 
-cat > dkfile/dfos8jdk8
-FROM centos
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
-
-RUN mkdir -p /usr/local/java/
-ADD ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
+docker run -itd --name jenkins cat9jenkins:2.289 /bin/bash
 
 ```
 
@@ -123,6 +104,8 @@ docker rm -f $(docker ps -qa)
 docker rmi $(docker images -f "dangling=true" -q)
 
 ```
+
+
 
 
 

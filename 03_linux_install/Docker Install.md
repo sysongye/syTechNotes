@@ -151,7 +151,7 @@ sudo yum-config-manager --disable docker-ce-nightly
 安装最新版 Docker 引擎和容器，或下一步安装指定版本。
 
 ```
-sudo yum install docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io
 ```
 
 ```

@@ -1,38 +1,39 @@
-# <font color=#69D600>os8jdk8:291 Dockerfile</font>
+# <font color=#69D600>jdk8mycat:1.6.7 Dockerfile</font>
 
 [TOC]
 
-#### Version: os8jdk8:291
+#### Version: jdk8mycat:1.6.7
 
 平台：CentOS Linux release 8.2.2004 (Core)
 
 Docker：Docker version 20.10.7
 
-> Note: 以 centos8:8 镜像作为基础
+> Note: 以 os8jdk8:291 镜像作为基础
 
 
 
 ### 下载文件
 
+> Note: 文件较小。
+
 ```perl
 # 递归创建目录，用于保存下载的文件，目录建议放在数据盘
-mkdir -p /home/Software/JDK
-cd /home/Software/JDK
+mkdir -p /home/Software/Mycat
+cd /home/Software/Mycat
 # 下载文件 系统有 wget 命令的
-wget 失败
+wget http://dl.mycat.org.cn/1.6.7.6/20210303094759/Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz
 # 下载文件 系统有 curl 命令的
-curl -O 失败
+curl -O http://dl.mycat.org.cn/1.6.7.6/20210303094759/Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz
 
-# Oracle 下载文件需要登录，浏览器下载再上传
 ```
 
 
 
 ### Dockerfile
 
-​		基础镜像 `os8jdk8:291` 的 Dockerfile
+​		基础服务 `jdk8mycat:1.6.7` 的 Dockerfile 和 supervisord.conf
 
-​		Filename: dfos8jdk8
+​		Filename: dfjdk8mycat
 
 ​		合理利用 &&，减少 RUN 生成中间层镜像。
 
@@ -43,38 +44,30 @@ curl -O 失败
 > Note: 软件的安装方法可能有很多种，不同系统不同版本命令也可能不一样，导致出现无法预料的问题，所以最好先测试 Dockerfile，排查解决好问题，生成正常的 REPOSITORY 而非 <none> ，这样可行的 Dockerfile 再放入 docker compose 里面，方便多台相同配置机器上进行快速部署。
 
 ```
-cd /home/Software/JDK
+cd /home/Software/Mycat
 
 # new
-# Dockerfile new
-cat > dfos8jdk8
-FROM centos8:8
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
-
-RUN mkdir -p /usr/local/java/
-ADD ./jdk-8u291-linux-x64.tar.gz /usr/local/java/
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
-
-EXPOSE 22
-
-
-# old
 # Dockerfile
-cat > dfos8jdk8
-FROM centos8:8
+cat > dfjdk8mycat
+FROM os8jdk8:291
 MAINTAINER songye
-LABEL desc="base on centos8:8 image"
+LABEL desc="base on os8jdk8:291 image"
 
-RUN mkdir -p /usr/local/java/
-COPY ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
-WORKDIR /usr/local/java/
-RUN tar zxf jdk-8u291-linux-x64.tar.gz && rm -f jdk-8u291-linux-x64.tar.gz
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+ADD ./Mycat-server-1.6.7.6-release-20210303094759-linux.tar.gz /usr/local/
+COPY ./supervisord.conf /etc/supervisord.conf
+RUN chmod -R 777 /usr/local/mycat/bin/mycat
 
-EXPOSE 22
+ENV MYCAT_HOME=/usr/local/mycat
+EXPOSE 8066
+CMD ["/usr/local/bin/supervisord"]
+
+
+# supervisord.conf
+cat > supervisord.conf
+[supervisord]
+nodaemon=true
+[program:mycat]
+command=/usr/local/mycat/bin/mycat start
 
 ```
 
@@ -91,19 +84,11 @@ EXPOSE 22
 # 不使用缓存，基于 FROM 相同镜像构建时，可能产生和使用相同的缓存，增加该参数则不使用缓存，另外生成新的缓存，即产生更多 REPOSITORY 为 <none> 的镜像，非特殊需求不推荐使用
 --no-cache		Do not use cache when building the image
 
-docker build --force-rm -f dfos8jdk8 -t os8jdk8:291 .
+docker build --force-rm -f dfjdk8mycat -t jdk8mycat:1.6.7 .
 
-docker history os8jdk8:291
+docker history jdk8mycat:1.6.7
 
-docker rmi os8jdk8:291
-
-cat > dkfile/dfos8jdk8
-FROM centos
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
-
-RUN mkdir -p /usr/local/java/
-ADD ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
+docker rmi jdk8mycat:1.6.7
 
 ```
 
@@ -123,6 +108,44 @@ docker rm -f $(docker ps -qa)
 docker rmi $(docker images -f "dangling=true" -q)
 
 ```
+
+
+
+
+
+借鉴备份
+
+
+~~~
+#
+# Tomcat7
+#
+
+FROM centos7
+MAINTAINER songye
+
+RUN yum clean all
+RUN yum -y update
+# Install libs
+WORKDIR /home/work/apps/
+RUN wget http://dl.mycat.io/1.6-RELEASE/Mycat-server-1.6-RELEASE-20161028204710-linux.tar.gz
+RUN mv Mycat-server-1.6-RELEASE-20161028204710-linux.tar.gz /usr/local/Mycat-server-1.6-RELEASE-20161028204710-linux.tar.gz
+WORKDIR /usr/local/
+RUN tar -zxvf Mycat-server-1.6-RELEASE-20161028204710-linux.tar.gz
+RUN rm Mycat-server-1.6-RELEASE-20161028204710-linux.tar.gz
+
+WORKDIR /usr/local/mycat/bin/
+RUN chmod -R 777 mycat
+
+ENV MYCAT_HOME=/usr/local/mycat
+
+
+EXPOSE 8066
+
+COPY supervisord.conf /etc/supervisord.conf
+CMD ["/usr/bin/supervisord"]
+
+~~~
 
 
 

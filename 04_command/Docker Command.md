@@ -2,6 +2,7 @@
 
 [TOC]
 
+平台：Linux
 ```perl
 # 拉取 FastFDS
 docker pull morunchang/fastdfs

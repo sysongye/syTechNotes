@@ -2,6 +2,7 @@
 
 [TOC]
 
+平台：Windows
 ```
 CATALINA_BASE
 E:\Apps_Install\apache-tomcat-9.0.0.M22

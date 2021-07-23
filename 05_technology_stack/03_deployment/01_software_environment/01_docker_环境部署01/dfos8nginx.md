@@ -18,8 +18,8 @@ Docker：Docker version 20.10.7
 
 ```perl
 # 递归创建目录，用于保存下载的文件，目录建议放在数据盘
-mkdir -p /root/software/nginx
-cd /root/software/nginx
+mkdir -p /home/Software/Nginx
+cd /home/Software/Nginx
 # 下载文件 系统有 wget 命令的
 wget https://repo.huaweicloud.com/nginx/nginx-1.20.0.tar.gz
 # 下载文件 系统有 curl 命令的
@@ -28,7 +28,7 @@ curl -O https://repo.huaweicloud.com/nginx/nginx-1.20.0.tar.gz
 
 # Nginx 配置参数 --with-http_geoip_module 需要 GeoIP 库，基础镜像没有，宿主机下载传到镜像再安装
 # GeoIP 根据来访者的 IP， 定位该 IP 所在经纬度、国家/地区、省市、和街道等位置信息。
-yum install --downloadonly --downloaddir=/root/software/nginx GeoIP GeoIP-devel
+yum install --downloadonly --downloaddir=/home/Software/Nginx GeoIP GeoIP-devel
 =====================
 Installing:
 GeoIP-1.6.12-7.el8.x86_64.rpm
@@ -58,19 +58,19 @@ GeoIP-GeoLite-data-2018.06-5.el8.noarch.rpm
 > Note: 软件的安装方法可能有很多种，不同系统不同版本命令也可能不一样，导致出现无法预料的问题，所以最好先测试 Dockerfile，排查解决好问题，生成正常的 REPOSITORY 而非 <none> ，这样可行的 Dockerfile 再放入 docker compose 里面，方便多台相同配置机器上进行快速部署。
 
 ```
-cd /root/software
+cd /home/Software/Nginx
 
 # new
 # Dockerfile
-cat > dkfile/dfos8nginx
+cat > dfos8nginx
 FROM centos8:8
 MAINTAINER songye
 LABEL desc="base on centos8:8 image"
 
-ADD ./nginx/nginx-1.20.0.tar.gz /usr/local/src
-COPY ./nginx/GeoIP*.rpm /root/software/
+ADD ./nginx-1.20.0.tar.gz /usr/local/src
+COPY ./GeoIP*.rpm /home/Software
 RUN useradd -M -s /sbin/nologin nginx \
-    && rpm -ih /root/software/GeoIP*.rpm && rm -f /root/software/GeoIP*.rpm \
+    && rpm -ih /home/Software/GeoIP*.rpm && rm -f /home/Software/GeoIP*.rpm \
     && yum install -y libxslt-devel gd gd-devel && yum clean all \
     && mkdir -p /usr/local/nginx/data \
     && cd /usr/local/src/nginx-1.20.0 \
@@ -89,17 +89,6 @@ EXPOSE 80
 ENTRYPOINT ["nginx"]
 CMD ["-g"]
 
-
-
-
-
-# supervisord.conf
-cat > tomcat/supervisord.conf
-[supervisord]
-nodaemon=true
-[program:nginx]
-command=/usr/local/apache-tomcat-9.0.10/bin/catalina.sh start
-
 ```
 
 
@@ -115,7 +104,7 @@ command=/usr/local/apache-tomcat-9.0.10/bin/catalina.sh start
 # 不使用缓存，基于 FROM 相同镜像构建时，可能产生和使用相同的缓存，增加该参数则不使用缓存，另外生成新的缓存，即产生更多 REPOSITORY 为 <none> 的镜像，非特殊需求不推荐使用
 --no-cache		Do not use cache when building the image
 
-docker build --force-rm -f dkfile/dfos8nginx -t os8nginx:1.20 .
+docker build --force-rm -f dfos8nginx -t os8nginx:1.20 .
 
 docker history os8nginx:1.20
 

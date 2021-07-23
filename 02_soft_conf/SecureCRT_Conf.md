@@ -2,6 +2,8 @@
 
 [TOC]
 
+平台：Windows
+
 #### Sessions 配置文件位置
 
 C:\Users\songye\AppData\Roaming\VanDyke\Config\Sessions

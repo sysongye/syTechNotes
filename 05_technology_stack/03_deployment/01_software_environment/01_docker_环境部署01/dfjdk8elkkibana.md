@@ -1,8 +1,8 @@
-# <font color=#69D600>os8tomcat:9 Dockerfile</font>
+# <font color=#69D600>jdk8elkkibana:7.13 Dockerfile</font>
 
 [TOC]
 
-#### Version: os8tomcat:9
+#### Version: jdk8elkkibana:7.13
 
 平台：CentOS Linux release 8.2.2004 (Core)
 
@@ -14,16 +14,16 @@ Docker：Docker version 20.10.7
 
 ### 下载文件
 
-> Note: 文件较小，也可以在 Dockerfile 下
+> Note: 文件较大。Elasticsearch + Logstash + Kibana 版本尽量保持一致
 
 ```perl
 # 递归创建目录，用于保存下载的文件，目录建议放在数据盘
-mkdir -p /root/software/tomcat
-cd /root/software/tomcat
+mkdir -p /home/Software/Kibana
+cd /home/Software/Kibana
 # 下载文件 系统有 wget 命令的
-wget https://repo.huaweicloud.com/apache/tomcat/tomcat-9/v9.0.10/bin/apache-tomcat-9.0.10.tar.gz
+wget https://repo.huaweicloud.com/kibana/7.13.3/kibana-7.13.3-linux-x86_64.tar.gz
 # 下载文件 系统有 curl 命令的
-curl -O https://repo.huaweicloud.com/apache/tomcat/tomcat-9/v9.0.10/bin/apache-tomcat-9.0.10.tar.gz
+curl -O https://repo.huaweicloud.com/kibana/7.13.3/kibana-7.13.3-linux-x86_64.tar.gz
 
 ```
 
@@ -31,9 +31,9 @@ curl -O https://repo.huaweicloud.com/apache/tomcat/tomcat-9/v9.0.10/bin/apache-t
 
 ### Dockerfile
 
-​		基础镜像 `os8tomcat:9` 的 Dockerfile 和 supervisord.conf
+​		基础服务 `jdk8elkkibana:7.13` 的 Dockerfile 和 supervisord.conf
 
-​		Filename: dfos8tomcat
+​		Filename: dfjdk8elkkibana
 
 ​		合理利用 &&，减少 RUN 生成中间层镜像。
 
@@ -44,27 +44,71 @@ curl -O https://repo.huaweicloud.com/apache/tomcat/tomcat-9/v9.0.10/bin/apache-t
 > Note: 软件的安装方法可能有很多种，不同系统不同版本命令也可能不一样，导致出现无法预料的问题，所以最好先测试 Dockerfile，排查解决好问题，生成正常的 REPOSITORY 而非 <none> ，这样可行的 Dockerfile 再放入 docker compose 里面，方便多台相同配置机器上进行快速部署。
 
 ```
-cd /root/software
+cd /home/Software/Kibana
 
 # new
 # Dockerfile
-cat > dkfile/dfos8tomcat
+cat > dfjdk8elkkibana
 FROM os8jdk8:291
 MAINTAINER songye
 LABEL desc="base on os8jdk8:291 image"
 
-ADD ./tomcat/apache-tomcat-9.0.10.tar.gz /usr/local/
-COPY ./tomcat/supervisord.conf /etc/supervisord.conf
+ADD ./kibana-7.13.3-linux-x86_64.tar.gz /usr/local/
+COPY ./kibana.yml /usr/local/kibana-7.13.3-linux-x86_64/config/
+COPY ./supervisord.conf /etc/supervisord.conf
 
-EXPOSE 8080
+RUN cd /usr/local/ \
+ && groupadd kibana \
+ && useradd kibana -g kibana -p DevEnv123$ \
+ && touch /usr/local/supervisord.log \
+ && chown -R kibana:kibana /usr/local/supervisord.log \
+ && chown -R kibana:kibana kibana-7.13.3-linux-x86_64 \
+ && chown -R kibana:kibana /usr/local/bin/supervisord
+
+USER kibana
+EXPOSE 5601
 CMD ["/usr/local/bin/supervisord"]
 
+
+# 修改配置文件 kibana.yml
+server.port: 5601
+server.host: "0.0.0.0"
+elasticsearch.hosts: "http://192.168.100.8:9200"
+
 # supervisord.conf
-cat > tomcat/supervisord.conf
+cat > supervisord.conf
 [supervisord]
 nodaemon=true
-[program:tomcat]
-command=/usr/local/apache-tomcat-9.0.10/bin/catalina.sh start
+[program:kibana]
+
+command=/usr/local/kibana-7.13.3-linux-x86_64/bin/kibana
+
+user=kibana
+
+
+# new test
+# Dockerfile
+cat > dfjdk8elkkibana
+FROM os8jdk8:291
+MAINTAINER songye
+LABEL desc="base on os8jdk8:291 image"
+
+RUN groupadd kibana \
+ && useradd kibana -g kibana -p DevEnv123$ \
+ && touch /usr/local/supervisord.log \
+ && chown -R kibana:kibana /usr/local/supervisord.log \
+ && chown -R kibana:kibana /usr/local/bin/supervisord
+
+USER kibana
+
+ADD ./kibana-7.13.3-linux-x86_64.tar.gz /usr/local/
+COPY ./kibana.yml /usr/local/kibana-7.13.3-linux-x86_64/config/
+COPY ./supervisord.conf /etc/supervisord.conf
+
+# RUN chown -R kibana:kibana /usr/local/kibana-7.13.3-linux-x86_64
+
+EXPOSE 5601
+CMD ["/usr/local/bin/supervisord"]
 
 ```
 
@@ -81,11 +125,15 @@ command=/usr/local/apache-tomcat-9.0.10/bin/catalina.sh start
 # 不使用缓存，基于 FROM 相同镜像构建时，可能产生和使用相同的缓存，增加该参数则不使用缓存，另外生成新的缓存，即产生更多 REPOSITORY 为 <none> 的镜像，非特殊需求不推荐使用
 --no-cache		Do not use cache when building the image
 
-docker build --force-rm -f dkfile/dfos8tomcat -t os8tomcat:9 .
+docker build --force-rm -f dfjdk8elkkibana -t jdk8elkkibana:7.13 .
 
-docker history os8tomcat:9
+docker history jdk8elkkibana:7.13
 
-docker rmi os8tomcat:9
+docker rmi jdk8elkkibana:7.13
+
+docker run -it --name kibana jdk8elkkibana:7.13 /bin/bash
+
+docker rm kibana
 
 ```
 
@@ -107,35 +155,6 @@ docker rmi $(docker images -f "dangling=true" -q)
 ```
 
 
-
-
-
-借鉴备份
-
-
-~~~
-#
-# Tomcat7
-#
-
-FROM centos7
-MAINTAINER songye
-
-RUN yum clean all
-RUN yum -y update
-# Install libs
-WORKDIR /home/work/apps/
-#RUN wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-7/v7.0.85/bin/apache-tomcat-7.0.85.tar.gz
-ADD apache-tomcat-7.0.85.tar.gz /usr/local/
-WORKDIR /usr/local/
-#RUN tar -zxvf apache-tomcat-7.0.85.tar.gz
-#RUN rm apache-tomcat-7.0.85.tar.gz
-
-EXPOSE 8080
-COPY supervisord.conf /etc/supervisord.conf
-CMD ["/usr/bin/supervisord"]
-
-~~~
 
 
 

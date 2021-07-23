@@ -1,6 +1,9 @@
-# <font color=#69D600>Tomcat Configuration</font>
+# <font color=#69D600>S Configuration</font>
 
 [TOC]
+
+
+平台：Windows
 
 ```
 CATALINA_BASE

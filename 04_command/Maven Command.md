@@ -2,6 +2,7 @@
 
 [TOC]
 
+平台：Windows
 ```perl
 # 该命令打印出所有的java系统属性和环境变量。
 mvn help:system

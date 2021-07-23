@@ -1,38 +1,41 @@
-# <font color=#69D600>os8jdk8:291 Dockerfile</font>
+# <font color=#69D600>jdk8rabbitmq:3.8.16 Dockerfile</font>
 
 [TOC]
 
-#### Version: os8jdk8:291
+#### Version: jdk8rabbitmq:3.8.16
 
 平台：CentOS Linux release 8.2.2004 (Core)
 
 Docker：Docker version 20.10.7
 
-> Note: 以 centos8:8 镜像作为基础
+> Note: 以 os8jdk8:291 镜像作为基础
 
 
 
 ### 下载文件
 
+> Note: 文件较小。
+
 ```perl
 # 递归创建目录，用于保存下载的文件，目录建议放在数据盘
-mkdir -p /home/Software/JDK
-cd /home/Software/JDK
+mkdir -p /home/Software/RabbitMQ
+cd /home/Software/RabbitMQ
 # 下载文件 系统有 wget 命令的
-wget 失败
+wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.16/rabbitmq-server-generic-unix-3.8.16.tar.xz
+wget https://erlang.org/download/otp_src_24.0.tar.gz
 # 下载文件 系统有 curl 命令的
-curl -O 失败
+curl -O https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.16/rabbitmq-server-generic-unix-3.8.16.tar.xz
+curl -O https://erlang.org/download/otp_src_24.0.tar.gz
 
-# Oracle 下载文件需要登录，浏览器下载再上传
 ```
 
 
 
 ### Dockerfile
 
-​		基础镜像 `os8jdk8:291` 的 Dockerfile
+​		基础服务 `jdk8rabbitmq:3.8.16` 的 Dockerfile
 
-​		Filename: dfos8jdk8
+​		Filename: dfjdk8rabbitmq
 
 ​		合理利用 &&，减少 RUN 生成中间层镜像。
 
@@ -43,38 +46,33 @@ curl -O 失败
 > Note: 软件的安装方法可能有很多种，不同系统不同版本命令也可能不一样，导致出现无法预料的问题，所以最好先测试 Dockerfile，排查解决好问题，生成正常的 REPOSITORY 而非 <none> ，这样可行的 Dockerfile 再放入 docker compose 里面，方便多台相同配置机器上进行快速部署。
 
 ```
-cd /home/Software/JDK
+cd /home/Software/RabbitMQ
 
 # new
-# Dockerfile new
-cat > dfos8jdk8
-FROM centos8:8
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
-
-RUN mkdir -p /usr/local/java/
-ADD ./jdk-8u291-linux-x64.tar.gz /usr/local/java/
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
-
-EXPOSE 22
-
-
-# old
 # Dockerfile
-cat > dfos8jdk8
-FROM centos8:8
+cat > dfjdk8rabbitmq
+FROM os8jdk8:291
 MAINTAINER songye
-LABEL desc="base on centos8:8 image"
+LABEL desc="base on os8jdk8:291 image"
 
-RUN mkdir -p /usr/local/java/
-COPY ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
-WORKDIR /usr/local/java/
-RUN tar zxf jdk-8u291-linux-x64.tar.gz && rm -f jdk-8u291-linux-x64.tar.gz
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+ADD ./rabbitmq-server-generic-unix-3.8.16.tar.xz /usr/local/rabbitmq/
+ADD ./otp_src_24.0.tar.gz /usr/local/erlang/
+# COPY rabbit.app /usr/local/rabbitmq/rabbitmq_server-3.8.16/ebin/
 
-EXPOSE 22
+RUN yum install -y xmlto perl lsof unixODBC-devel && yum clean all \
+ && cd /usr/local/erlang/otp_src_24.0 \
+ && ./configure --prefix=/usr/local/erlang/ --without-javac \
+ && make && make install
+
+ENV ERL_HOME=/usr/local/erlang/otp_src_24.0/ PATH=$PATH:$ERL_HOME/bin \
+ RABBITMQ_HOME=/usr/local/rabbitmq/rabbitmq_server-3.8.16 \
+ PATH=$PATH:$RABBITMQ_HOME/bin
+
+EXPOSE 15672
+EXPOSE 5672
+
+ENTRYPOINT rabbitmq-plugins enable rabbitmq_management && rabbitmq-server
+CMD ["rabbitmq-server"]
 
 ```
 
@@ -91,19 +89,15 @@ EXPOSE 22
 # 不使用缓存，基于 FROM 相同镜像构建时，可能产生和使用相同的缓存，增加该参数则不使用缓存，另外生成新的缓存，即产生更多 REPOSITORY 为 <none> 的镜像，非特殊需求不推荐使用
 --no-cache		Do not use cache when building the image
 
-docker build --force-rm -f dfos8jdk8 -t os8jdk8:291 .
+docker build --force-rm -f dfjdk8rabbitmq -t jdk8rabbitmq:3.8.16 .
 
-docker history os8jdk8:291
+docker history jdk8rabbitmq:3.8.16
 
-docker rmi os8jdk8:291
+docker rmi jdk8rabbitmq:3.8.16
 
-cat > dkfile/dfos8jdk8
-FROM centos
-MAINTAINER songye
-LABEL desc="base on centos8:8 image"
+docker run -it --name rabbitmq jdk8rabbitmq:3.8.16 /bin/bash
 
-RUN mkdir -p /usr/local/java/
-ADD ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
+docker rm rabbitmq
 
 ```
 
