@@ -53,7 +53,8 @@ RUN yum install -y langpacks-en glibc-all-langpacks \
     bzip2-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel \
     && yum clean all \
     && echo 'root:dksongye' | chpasswd \
-    && /usr/bin/ssh-keygen -f id_rsa \
+#    && /usr/bin/ssh-keygen -f id_rsa \
+    && /usr/bin/ssh-keygen -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key \
     && mkdir -p /home/Software/CentOS/Python
 COPY ./Python/Python-3.9.6.tgz /home/Software/CentOS/Python
 WORKDIR /home/Software/CentOS/Python
@@ -109,6 +110,8 @@ CMD /usr/sbin/sshd -D
 --no-cache		Do not use cache when building the image
 
 docker build --force-rm -f dfcentos8 -t centos8:8 .
+
+docker run -it --name os8 centos8:8 /bin/bash
 
 ```
 

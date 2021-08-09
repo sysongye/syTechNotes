@@ -59,7 +59,7 @@ RUN yum install -y libaio numactl autoconf && yum clean all
 RUN groupadd mysql && useradd -g mysql mysql \
  && mkdir -p /var/lib/mysql/ && chown -R mysql:mysql /var/lib/mysql \
  && cd /usr/local/ && tar zxf mysql-5.7.32-linux-glibc2.12-x86_64.tar.gz \
- && rm -f mysql-5.7.32-linux-glibc2.12-x86_64.tar.gz
+ && rm -f mysql-5.7.32-linux-glibc2.12-x86_64.tar.gz \
  && mv /usr/local/mysql-5.7.32-linux-glibc2.12-x86_64 /usr/local/mysql \
  && chown -R mysql:mysql /usr/local/mysql \
  && /usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf --initialize --user=mysql --basedir=/usr/local/mysql \

@@ -42,9 +42,59 @@
 | SAS          | <abbr title="Serial Attached SCSI">SAS</abbr>                | 小型计算机系统接口 ( Serial Attached SCSI )                  | 串行连接 SCSI 接口，串行连接小型计算机系统接口，全双工，兼容 SATA |
 | NVMe         | <abbr title="NVM Express">NVMe</abbr>                        | NVM Express ( NVM Express )                                  | 或称非易失性内存主机控制器接口规范 ( Non Volatile Memory Host Controller Interface Specification， NVMHCIS ) |
 | AHCI         | <abbr title="Advanced Host Controller Interface">AHCI</abbr> | 高级主机控制器接口 ( Advanced Host Controller Interface )    | 一种由英特尔制定的技术标准，它允许软件与 SATA 存储设备沟通的硬件机制，可让 SATA 存储设备激活高级 SATA 功能，例如原生指令队列及热插拔 |
-| PCI          | <abbr title="Peripheral Component Interconnect">PCI</abbr>   | 外设组件互连标准 ( Peripheral Component Interconnect )       | 一种由英特尔（Intel）公司1991年推出的用于定义局部总线的标准  |
+| PCI          | <abbr title="Peripheral Component Interconnect">PCI</abbr>   | 外设组件互连标准 ( Peripheral Component Interconnect )       | 一种由英特尔（Intel）公司 1991 年推出的用于定义局部总线的标准 |
 | PCI          | <abbr title="Physical Cell Identifier">PCI</abbr>            | 物理小区标识 ( Physical Cell Identifier )                    | LTE 中终端以此区分不同小区的无线信号                         |
 | RAID         | <abbr title="Redundant Arrays of Independent Disks">RAID</abbr> | 磁盘阵列 ( Redundant Arrays of Independent Disks )           | 由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能 |
+| EFI          | <abbr title="Extensible Firmware Interface">EFI</abbr>       | 可扩展固件接口 ( Extensible Firmware Interface )             | 英特尔公司推出的一种在未来的类 PC 的电脑系统中替代 BIOS 的升级方案 |
+| UEFI         | <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> | 统一可扩展固件接口 ( Unified Extensible Firmware Interface ) | 一种个人电脑系统规格，用来定义操作系统与系统固件之间的软件界面，作为BIOS 的替代方案，UEFI 的前身 EFI |
+| ESP          | <abbr title="Unified Extensible Firmware Interface">ESP</abbr> | EFI 系统分区 ( EFI system partition )                        | 通常是指数据存储介质中的一个分区，常用于硬盘或固态硬盘       |
+| GUID         | <abbr title="Globally Unique Identifier">GUID</abbr>         | 全局唯一标识符 ( Globally Unique Identifier )                | 一种由算法生成的二进制长度为128位的数字标识符                |
+| GPT          | <abbr title="GUID Partition Table">GPT</abbr>                | 全局唯一标识分区表 ( GUID Partition Table )                  | 一个实体磁盘的分区表的结构布局的标准                         |
+| SGI          | <abbr title="Silicon Graphics Inc">SGI</abbr>                | 美国硅图公司 ( Silicon Graphics Inc )                        | 硅谷图形公司，为高性能计算、数据管理和虚拟化产品的主要制造商。SGI 工作站和服务器优化用于计算机图像处理方便的任务 |
+| DOS          | <abbr title="Disk Operating System">DOS</abbr>               | 磁盘操作系统 ( Disk Operating System )                       | 早期个人计算机上的一类操作系统                               |
+| GRUB         | <abbr title="GRand Unified Bootloader">GRUB</abbr>           | 大一统启动加载器 ( GRand Unified Bootloader )                | 一个多重启动加载器，承自 PUPA 项目                           |
+| PUPA         | <abbr title="Preliminary Universal Programming Architecture for GRUB">PUPA</abbr> | 初步通用程序设计体系结构 ( Preliminary Universal Programming Architecture for GRUB ) | PUPA is a research project for the next generation of GNU GRUB. The most important goal is to make GNU GRUB cleaner, safer, more robust, and more powerful. |
+| DNS          | <abbr title="Domain Name System">DNS</abbr>                  | 域名系统 ( Domain Name System )                              | 互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。DNS 使用 UDP 端口 53 |
+| DNS          | <abbr title="Domain Name Server">DNS</abbr>                  | 域名服务器 ( Domain Name Server )                            | 进行域名 ( domain name ) 和与之相对应的IP地址 ( IP address ) 转换的服务器 |
+| SNMP         | <abbr title="Simple Network Management Protocol">SNMP</abbr> | 简单网络管理协议 ( Simple Network Management Protocol )      | 专门设计用于在 IP 网络管理网络节点（服务器、工作站、路由器、交换机及HUBS等）的一种标准协议，它是一种应用层协议 |
+| DHCP         | <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> | 动态主机配置协议 ( Dynamic Host Configuration Protocol )     | 一个局域网的网络协议。指的是由服务器控制一段IP地址范围，客户机登录服务器时就可以自动获得服务器分配的IP地址和子网掩码 |
+| FTP          | <abbr title="File Transfer Protocol">FTP</abbr>              | 文件传输协议 ( File Transfer Protocol )                      | 用于在网络上进行文件传输的一套标准协议，它工作在 OSI 模型的第七层， TCP 模型的第四层， 即应用层， 使用 TCP 传输而不是 UDP， 客户在和服务器建立连接前要经过一个“三次握手”的过程， 保证客户与服务器之间的连接是可靠的， 而且是面向连接， 为数据传输提供可靠保证 |
+| TFTP         | <abbr title="Trivial File Transfer Protocol">TFTP</abbr>     | 简单文件传输协议 ( Trivial File Transfer Protocol )          | TCP/IP协议族中的一个用来在客户机与服务器之间进行简单文件传输的协议，提供不复杂、开销不大的文件传输服务。端口号为 69 |
+| HTTP         | <abbr title="Hyper Text Transfer Protocol">HTTP</abbr>       | 超文本传输协议 ( Hyper Text Transfer Protocol )              | 一个简单的请求-响应协议，它通常运行在 TCP 之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应 |
+| HTTPS        | <abbr title="Hyper Text Transfer Protocol over SecureSocket Layer">HTTPS</abbr> | 安全超文本传输协议 ( Hyper Text Transfer Protocol over Secure Socket Layer ) | 以安全为目标的 HTTP 通道，在 HTTP 的基础上通过传输加密和身份认证保证了传输过程的安全性 |
+| ICMP         | <abbr title="Internet Control Message Protocol">ICMP</abbr>  | 互联网控制报文协议 ( Internet Control Message Protocol )     | TCP/IP 协议簇的一个子协议，用于在 IP 主机、路由器之间传递控制消息 |
+| SMTP         | <abbr title="Simple Mail Transfer Protocol">SMTP</abbr>      | 简单邮件传送协议 ( Simple Mail Transfer Protocol )           | 一种提供可靠且有效的电子邮件传输的协议                       |
+| UDP          | <abbr title="User Datagram Protocol">UDP</abbr>              | 用户数据报协议 ( User Datagram Protocol )                    | Internet 协议集支持一个无连接的传输协议，该协议称为用户数据报协议 |
+| TCP          | <abbr title="Transmission Control Protocol">TCP</abbr>       | 用户数据报协议 ( Transmission Control Protocol )             | 一种面向连接的、可靠的、基于字节流的传输层通信协议，由 IETF 的 RFC 793 定义 |
+| FQDN         | <abbr title="Fully Qualified Domain Name">FQDN</abbr>        | 全限定域名 ( Fully Qualified Domain Name )                   | 同时带有主机名和域名的名称                                   |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
+|              |                                                              |                                                              |                                                              |
 
 
 

@@ -99,6 +99,16 @@ swap	2G		xfs
 /home	30G	xfs
 ```
 
+Fedora 等 /boot 占用大，Docker 镜像太大，调整分区大小，测试机去掉 /home 融入根目录，使软件空间足够大
+
+```
+分区		大小		文件系统
+/boot	400M	ext4
+/		43G		xfs
+/tmp	4G		xfs
+swap	2G		xfs
+```
+
 
 
 #### Where are you?

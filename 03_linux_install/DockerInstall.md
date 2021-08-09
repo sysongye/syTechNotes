@@ -40,14 +40,9 @@ OS requirements
 #### Uninstall old versions:
 
 ```
-$ sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
+$ sudo yum remove docker docker-client docker-client-latest docker-common \
+  docker-latest docker-latest-logrotate docker-logrotate docker-engine
+
 ```
 
 
@@ -62,6 +57,7 @@ $ sudo yum install -y yum-utils
 $ sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
+
 ```
 
 Failed to set locale, defaulting to C.UTF-8
@@ -202,6 +198,7 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
 EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
+
 ```
 
 
@@ -217,6 +214,25 @@ sudo rm -rf /var/lib/docker
 
 
 
+### Docker Compose
+
+```
+curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+docker-compose --version
+
+```
+
+
+
+
+
+
+
 ### 检测
 
 开启 daemon 守护进程
@@ -224,6 +240,7 @@ sudo rm -rf /var/lib/docker
 ```
 # sudo systemctl start docker
 
+# docker -v
 # docker version
 Client: Docker Engine - Community
  Version:           19.03.13
@@ -270,6 +287,10 @@ This message shows that your installation appears to be working correctly.
 ```
 # sudo systemctl stop docker
 ```
+
+
+
+
 
 
 

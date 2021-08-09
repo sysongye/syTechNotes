@@ -49,9 +49,9 @@ cd /home/Software/Jenkins
 # new
 # Dockerfile
 cat > dfcat9jenkins
-FROM os8tomcat:9
+FROM jdk8tomcat:9
 MAINTAINER songye
-LABEL desc="base on os8tomcat:9 image"
+LABEL desc="base on jdk8tomcat:9 image"
 
 COPY ./jenkins.war /usr/local/apache-tomcat-9.0.10/webapps/ROOT/
 RUN cd /usr/local/apache-tomcat-9.0.10/webapps/ROOT/ \

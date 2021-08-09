@@ -61,7 +61,9 @@ RUN cd /usr/local/ \
  && groupadd kibana \
  && useradd kibana -g kibana -p DevEnv123$ \
  && touch /usr/local/supervisord.log \
+ && touch /home/Software/CentOS/Python/supervisord.log \
  && chown -R kibana:kibana /usr/local/supervisord.log \
+ && chown -R kibana:kibana /home/Software/CentOS/Python/supervisord.log \
  && chown -R kibana:kibana kibana-7.13.3-linux-x86_64 \
  && chown -R kibana:kibana /usr/local/bin/supervisord
 

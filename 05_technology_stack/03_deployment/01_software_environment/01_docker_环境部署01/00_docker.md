@@ -17,7 +17,7 @@ Docker：Docker version 20.10.7
 ### 整体目录结构
 
 ```
-/home/Software
+/home/Software/
   |- CentOS
     |- Python
   |- Elasticsearch
@@ -133,7 +133,22 @@ docker network create --subnet=192.168.10.0/24 envsy
 
 
 
+docker pull tinht/oracle-19c-ee
 
+
+
+### Docker Compose
+
+```
+curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+docker-compose --version
+
+```
 
 
 

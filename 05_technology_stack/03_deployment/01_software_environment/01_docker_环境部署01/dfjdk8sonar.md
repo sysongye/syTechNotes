@@ -66,9 +66,13 @@ COPY ./sonar-java-plugin-7.2.0.26923.jar /usr/local/sonarqube-8.9.1.44547/extens
 RUN cd /usr/local/ && unzip -o sonarqube-8.9.1.44547.zip \
 # 创建 elksearch 用户组及 elksearch 用户（因为启动 elksearch 不能使用root用户）
  && groupadd elksearch && useradd elksearch -g elksearch -p DevEnv123$ \
+ && touch /home/Software/CentOS/Python/supervisord.log \
+ && chown -R elksearch:elksearch /home/Software/CentOS/Python/supervisord.log \
  && mkdir -p /usr/local/sonarqube-8.9.1.44547/extensions/downloads \
  && chown -R elksearch:elksearch /usr/local/sonarqube-8.9.1.44547/elasticsearch \
- && chmod -R 777 /usr/local/sonarqube-8.9.1.44547/
+ && chmod -R 777 /usr/local/sonarqube-8.9.1.44547/ \
+ && touch /home/Software/CentOS/Python/supervisord.log \
+ && chown -R elksearch:elksearch /home/Software/CentOS/Python/supervisord.log
 
 COPY sonar.properties  /usr/local/sonarqube-8.9.1.44547/conf/sonar.properties
 

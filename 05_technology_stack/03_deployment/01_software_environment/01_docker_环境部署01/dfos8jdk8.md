@@ -52,10 +52,10 @@ FROM centos8:8
 MAINTAINER songye
 LABEL desc="base on centos8:8 image"
 
-RUN mkdir -p /usr/local/java/
+# RUN mkdir -p /usr/local/java/
 ADD ./jdk-8u291-linux-x64.tar.gz /usr/local/java/
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:/usr/local/java/jdk1.8.0_291/bin \
+    CLASSPATH=".:/usr/local/java/jdk1.8.0_291/lib/dt.jar:/usr/local/java/jdk1.8.0_291/lib/tools.jar"
 
 EXPOSE 22
 
@@ -71,8 +71,8 @@ RUN mkdir -p /usr/local/java/
 COPY ./jdk/jdk-8u291-linux-x64.tar.gz /usr/local/java/
 WORKDIR /usr/local/java/
 RUN tar zxf jdk-8u291-linux-x64.tar.gz && rm -f jdk-8u291-linux-x64.tar.gz
-ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:$JAVA_HOME/bin \
-    CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+ENV JAVA_HOME=/usr/local/java/jdk1.8.0_291 PATH=$PATH:/usr/local/java/jdk1.8.0_291/bin \
+    CLASSPATH=".:/usr/local/java/jdk1.8.0_291/lib/dt.jar:/usr/local/java/jdk1.8.0_291/lib/tools.jar"
 
 EXPOSE 22
 
@@ -96,6 +96,8 @@ docker build --force-rm -f dfos8jdk8 -t os8jdk8:291 .
 docker history os8jdk8:291
 
 docker rmi os8jdk8:291
+
+docker run -it --name jdk8 os8jdk8:291 /bin/bash
 
 cat > dkfile/dfos8jdk8
 FROM centos

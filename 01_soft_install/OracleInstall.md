@@ -1,4 +1,6 @@
-# <font color=#69D600>Oracle Database Install</font>
+# <font color=#69D600>
+
+# Oracle Database Install</font>
 
 [TOC]
 
@@ -64,7 +66,7 @@ Oracle官网下载：https://www.oracle.com/database/technologies/oracle-databas
 
 #### Install Product:
 
-安装过程添加用户进组失败不用管，Continue 
+安装过程添加用户进组失败不用管，Continue
 
 ![0](./images/Oracle/Oracle007.png "Install Product") 
 

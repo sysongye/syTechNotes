@@ -122,6 +122,11 @@ https://developers.redhat.com/products/rhel/download
 
 
 
+1、家庭用途版本有：Linux Mint、Ubuntu、OpenSUSE、Fedora、PC-BSD。
+2、商业用途版本有：Debian、RHEL、CentOS。
+3、挑战用途版本有：Gentoo、LFS。
+4、理想用途版本有：FreeBSD、OpenBSD、Solaris、OpenSolaris。
+
 
 
 

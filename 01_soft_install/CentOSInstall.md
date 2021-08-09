@@ -101,13 +101,34 @@ swap	2G		xfs
 /home	26.99G	xfs
 ```
 
-有点奇怪有 1M 空间没有被分配，不清楚被什么文件占用了或是不是预留给某个文件了
-
 /boot 暂时给了 1G，服务器好像 200M 就足够，系统启动文件并不是很大，后面查看也只有 144M
 
 ```
 /dev/sda1 	976M  144M  766M  16% /boot
 ```
+
+/boot 调整  200M
+
+```
+分区		大小		文件系统
+/boot	200M	ext4
+/		16G		xfs
+/tmp	4G		xfs
+swap	2G		xfs
+/home	30G	xfs
+```
+
+Fedora 等 /boot 占用大，Docker 镜像太大，调整分区大小，测试机去掉 /home 融入根目录，使软件空间足够大
+
+```
+分区		大小		文件系统
+/boot	400M	ext4
+/		43G		xfs
+/tmp	4G		xfs
+swap	2G		xfs
+```
+
+
 
 配置完成，Accept Changes
 

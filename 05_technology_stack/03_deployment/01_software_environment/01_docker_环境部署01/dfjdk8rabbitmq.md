@@ -64,9 +64,9 @@ RUN yum install -y xmlto perl lsof unixODBC-devel && yum clean all \
  && ./configure --prefix=/usr/local/erlang/ --without-javac \
  && make && make install
 
-ENV ERL_HOME=/usr/local/erlang/otp_src_24.0/ PATH=$PATH:$ERL_HOME/bin \
- RABBITMQ_HOME=/usr/local/rabbitmq/rabbitmq_server-3.8.16 \
- PATH=$PATH:$RABBITMQ_HOME/bin
+ENV ERL_HOME=/usr/local/erlang/otp_src_24.0/ PATH=$PATH:/usr/local/erlang/otp_src_24.0/bin \
+ RABBITMQ_HOME=/usr/local/rabbitmq/rabbitmq_server-3.8.16
+ENV PATH=$PATH:$RABBITMQ_HOME/sbin
 
 EXPOSE 15672
 EXPOSE 5672

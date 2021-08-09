@@ -17,13 +17,13 @@ Docker：Docker version 20.10.7
 ```
 cd /home/Software/Shipyard
 
+docker pull centos
 docker pull alpine
 docker pull swarm
 docker pull rethinkdb
 docker pull microbox/etcd
 docker pull shipyard/docker-proxy
 docker pull shipyard/shipyard
-
 
 ```
 
@@ -80,8 +80,9 @@ docker run -itd --restart=always -p 8080:8080 \
 iptables -P FORWARD ACCEPT
 iptables -nL
 
-firewalld status
+firewall-cmd state
 
+firewall-cmd --zone=public --add-port=21/tcp --permanent
 firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --zone=public --add-port=8080/tcp --permanent
@@ -89,6 +90,21 @@ firewall-cmd --zone=public --add-port=2375/tcp --permanent
 firewall-cmd --zone=public --add-port=3375/tcp --permanent
 firewall-cmd --zone=public --add-port=4001/tcp --permanent
 firewall-cmd --zone=public --add-port=7001/tcp --permanent
+
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+firewall-cmd --zone=public --add-port=5601/tcp --permanent
+firewall-cmd --zone=public --add-port=5672/tcp --permanent
+firewall-cmd --zone=public --add-port=6379/tcp --permanent
+firewall-cmd --zone=public --add-port=8066/tcp --permanent
+firewall-cmd --zone=public --add-port=8081/tcp --permanent
+firewall-cmd --zone=public --add-port=8180/tcp --permanent
+firewall-cmd --zone=public --add-port=8200/tcp --permanent
+firewall-cmd --zone=public --add-port=8888/tcp --permanent
+firewall-cmd --zone=public --add-port=8899/tcp --permanent
+firewall-cmd --zone=public --add-port=9000/tcp --permanent
+firewall-cmd --zone=public --add-port=9092/tcp --permanent
+firewall-cmd --zone=public --add-port=9200/tcp --permanent
+firewall-cmd --zone=public --add-port=9300/tcp --permanent
 
 firewall-cmd --reload
 
