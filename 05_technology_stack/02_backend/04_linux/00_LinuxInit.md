@@ -614,6 +614,8 @@ firewall-cmd --zone=public --add-port=9092/tcp --permanent
 firewall-cmd --zone=public --add-port=9200/tcp --permanent
 firewall-cmd --zone=public --add-port=9300/tcp --permanent
 
+firewall-cmd --zone=public --add-port=1521/tcp --permanent
+
 # 重新加载
 firewall-cmd --reload
 

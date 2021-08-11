@@ -1,6 +1,4 @@
-# <font color=#69D600>
-
-# Oracle Database Install</font>
+# <font color=#69D600>Oracle Database Install</font>
 
 [TOC]
 

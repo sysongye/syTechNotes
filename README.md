@@ -68,4 +68,4 @@
 
 
 
-<img src="./images/logo/logo-center.svg" alt="LOGO" title="songye" style="zoom: 5%;" /> 
+<img src="./images/logo/logo-center.svg" alt="LOGO" title="songye" style="width:120px; height:auto;" /> 

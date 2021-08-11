@@ -1,18 +1,61 @@
-# <font color=#69D600>MySQL Install</font>
+# <font color=#69D600>Oracle database Install</font>
 
 [TOC]
 
-#### Version: mysql-5.7.32
+Oracle官网下载：https://www.oracle.com/database/technologies/oracle-database-software-downloads.html
+
+Doc: https://docs.oracle.com/en/database/oracle/oracle-database/19/index.html
+
+#### Version: LINUX.X64_193000_db_home	oracle-database-ee-19c
 
 平台：CentOS Linux release 8.2.2004 (Core)
 
-> Note: 华为镜像下载速度快 https://mirrors.huaweicloud.com/home
+文件：LINUX.X64_193000_db_home.zip
 
-文件：mysql-5.7.32-linux-glibc2.12-x86_64.tar.gz
+> https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackage/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
+>
+> http://www.rpmfind.net/linux/rpm2html/search.php
 
 
 
-### 创建用户和用户组
+
+
+yum install -y ksh libaio-devel sysstat libnsl
+
+rpm -ivh compat-libstdc++-33-3.2.3-72.el7.x86_64.rpm
+
+rpm -ivh compat-libcap1-1.10-7.el7.x86_64.rpm
+
+rpm -ivh oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm
+
+rpm -ivh oracle-database-ee-19c-1.0-1.x86_64.rpm
+
+/etc/init.d/oracledb_ORCLCDB-19c configure -datafileDestination=/home/oracle/oradata
+
+
+
+/opt/oracle/product/19c/dbhome_1/bin/dbca -silent -createDatabase \
+  -templateName General_Purpose.dbc \
+  -gdbname cdb1 -sid cdb1 -responseFile NO_VALUE \
+  -characterSet AL32UTF8 \
+  -sysPassword oracle \
+  -systemPassword oracle \
+  -createAsContainerDatabase true \
+  -numberOfPDBs 1 \
+  -pdbName pdb1 \
+  -pdbAdminPassword oracle \
+  -databaseType MULTIPURPOSE \
+  -automaticMemoryManagement false \
+  -totalMemory 2000 \
+  -storageType FS \
+  -datafileDestination "/home/oracle/oradata" \
+  -redoLogFileSize 50 \
+  -emConfiguration NONE \
+  -ignorePreReqs
+
+
+
+创建用户和用户组
 
 ```
 groupadd mysql
@@ -95,7 +138,7 @@ mysqld --verbose --help | grep -C 2 'Default options'
 
 
 
-### 修改密码和权限
+修改密码和权限
 
 ```
 SET PASSWORD = PASSWORD('songye');

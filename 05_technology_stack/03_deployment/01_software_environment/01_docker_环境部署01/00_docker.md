@@ -133,7 +133,13 @@ docker network create --subnet=192.168.10.0/24 envsy
 
 
 
-docker pull tinht/oracle-19c-ee
+#### Oracle	docker pull tinht/oracle-19c-ee
+
+docker run -d -itp 1521 --name oracle tinht/oracle-19c-ee /bin/bash
+
+
+
+docker exec -it oracle /bin/bash
 
 
 

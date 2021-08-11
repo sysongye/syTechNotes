@@ -2,11 +2,13 @@
 
 [TOC]
 
-<font color=#69D600>**Full Stack**</font>
+<font color=#69D600 size=6>**Full Stack**</font>
 
 
 
 ## 前端 Frontend
+
+01_frontend
 
 ### HTML+DIV+CSS+Less
 
@@ -48,17 +50,47 @@
 
 ## 后台 Backend
 
+02_backend
+
 ### 计算机基础
 
 
 
 #### 数据结构与算法
 
+01_data_structure
+
+02_algorithms
+
+
+
 #### 设计原则与模式
+
+03_design_pattern
+
+
 
 ### Linux
 
+04_linux
+
+
+
+### virtual machine
+
+05_virtual_machine
+
+#### Docker
+
+#### Podman
+
+
+
+
+
 ### Java
+
+06_java
 
 JDK
 
@@ -66,7 +98,11 @@ JRE
 
 JVM
 
-### Java 框架
+
+
+### Java 框架 Framework
+
+07_java_framework
 
 Spring
 
@@ -84,13 +120,23 @@ Shiro
 
 JWT
 
-### 数据库
+
+
+### 数据库 Database
+
+08_database
 
 #### MySQL
 
 #### Oracle
 
 #### Redis
+
+
+
+### Distributed System
+
+09_distributed_system
 
 ### Tomcat
 
@@ -116,17 +162,7 @@ Kibana
 
 Netty
 
-Docker
-
-Podman
-
 Jenkins
-
-Git
-
-Maven
-
-Gradle
 
 Sonar
 
@@ -136,15 +172,43 @@ Swagger
 
 
 
+### version control system
+
+10_version_control_system
+
+#### Git
+
+#### SVN
+
+
+
+### project build tool
+
+11_project_build_tool
+
+#### Maven
+
+#### Gradle
 
 
 
 
 
+## 部署
+
+03_deployment
 
 
 
+### 环境部署
 
+01_software_environment
+
+
+
+### 项目部署
+
+02_project_deployment
 
 
 
